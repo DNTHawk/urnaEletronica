@@ -1,0 +1,187 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.fundo {
+    z-index: -2;
+    width: 300px;
+    height: 600px;
+    background-color: #696969;
+    position: fixed;
+    right: 63px;
+    top: 10px;
+    -webkit-clip-path: polygon(80% 14%, 100% -1%, 100% 66%, 66% 100%);
+    clip-path: polygon(80% 8%, 100% -1%, 100% 66%, 66% 100%);
+}
+
+
+.topoUrna{
+    background-color:#A9A9A9;
+    width: 1111px;
+    height: 50px;
+    position: fixed;
+    top: 10px;
+    left: 104px;
+
+    -webkit-clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    
+}
+.urna{
+    background-color: #C0C0C0;
+    width: 1100px;
+    height: 550px;
+    position: fixed;
+    top: 60px;
+    left: 60px;
+
+    -webkit-clip-path: polygon(4% 0, 100% 0, 96% 100%, 0% 100%);
+    clip-path: polygon(4% 0, 100% 0, 96% 100%, 0% 100%);
+}
+
+.urna .telaBotoes {
+    background-color: #000;
+    width: 400px;
+    height: 430px;
+    position: relative;
+    left: 680px;
+    top: 15px;
+    -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(10% 0, 97% 0, 89% 100%, 0% 100%);
+}
+
+.urna .etiqueta {
+    background-color: #fff;
+    width: 355px;
+    height: 80px;
+    position: relative;
+    left: 720px;
+    top: 15px;
+    -webkit-clip-path: polygon(1% 0, 99% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
+}
+
+.urna .etiqueta img{
+    width: 65px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.urna .etiqueta p{
+    font-size: 30px;
+    position: relative;
+    left: 100px;
+    top: -100px;
+    text-align: center;
+    width: 200px;
+}
+.urna .telaInfo {
+    width: 640px;
+    height: 500px;
+    background-color: #DCDCDC;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    z-index: 1;
+
+    -webkit-clip-path: polygon(1% 0, 99% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
+}
+.urna .telaInfoBorda {
+    width: 650px;
+    height: 510px;
+    background-color: #000;
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    z-index: 0;
+
+    -webkit-clip-path: polygon(1% 0, 99% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(7% 0, 100% 0, 93% 100%, 0% 100%);
+}
+
+.urna .telaBotoes .btn {
+    background-color: #808080;
+    width: 70px;
+    height: 60px;
+    position: fixed;
+    -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(10% 0, 100% 0%, 92% 100%, 0% 100%);
+}
+
+.urna .telaBotoes .btn.btn1 {
+    top: 170px;
+    left: 820px;  
+}
+.urna .telaBotoes .btn.btn2 {
+    top: 170px;
+    left: 910px;  
+}
+.urna .telaBotoes .btn.btn3 {
+    top: 170px;
+    left: 1000px;  
+}
+.urna .telaBotoes .btn.btn4 {
+    top: 250px;
+    left: 812px;  
+}
+.urna .telaBotoes .btn.btn5 {
+    top: 250px;
+    left: 902px;  
+}
+.urna .telaBotoes .btn.btn6 {
+    top: 250px;
+    left: 992px;  
+}
+.urna .telaBotoes .btn.btn7 {
+    top: 330px;
+    left: 805px;  
+}
+.urna .telaBotoes .btn.btn8 {
+    top: 330px;
+    left: 895px;  
+}
+.urna .telaBotoes .btn.btn9 {
+    top: 330px;
+    left: 985px;  
+}
+.urna .telaBotoes .btn.btn0 {
+    top: 410px;
+    left: 890px;  
+}
+
+.urna .telaBotoes .btnBranco{
+    background-color: #FFF;
+    width: 100px;
+    height: 70px;
+    position: fixed;
+    top: 500px;
+    left: 755px;  
+
+    -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.urna .telaBotoes .btnCorrige{
+    background-color: #FFA500;
+    width: 100px;
+    height: 70px;
+    position: fixed;
+    top: 500px;
+    left: 865px;  
+
+    -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.urna .telaBotoes .btnConfirma{
+    background-color: #228B22;
+    width: 110px;
+    height: 90px;
+    position: fixed;
+    top: 480px;
+    left: 975px;  
+
+    -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
+}
