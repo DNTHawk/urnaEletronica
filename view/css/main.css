@@ -15,7 +15,6 @@ html, body{
     clip-path: polygon(80% 8%, 100% -1%, 100% 66%, 65% 100%);
 }
 
-
 .topoUrna {
     z-index: 1;
     background-color: #A9A9A9;
@@ -27,6 +26,7 @@ html, body{
     -webkit-clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
     clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
 }
+
 .urna {
     z-index: 2;
     background-color: #C0C0C0;
@@ -68,6 +68,7 @@ html, body{
     margin-top: 5px;
     margin-left: 10px;
 }
+
 .urna .etiqueta p{
     font-size: 30px;
     position: relative;
@@ -76,11 +77,12 @@ html, body{
     text-align: center;
     width: 200px;
 }
+
 .urna .telaInfo {
     z-index: 3;
     width: 680px;
     height: 440px;
-    background-color: #DCDCDC;
+    background-color: #EFEFEF;
     position: absolute;
     top: 60px;
     left: 36px;
@@ -88,6 +90,7 @@ html, body{
     -webkit-clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
     clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 }
+
 .urna .telaInfoBorda {
     z-index: 0;
     width: 690px;
@@ -101,7 +104,6 @@ html, body{
     clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 }
 
-
 .urna .telaBotoes .btn {
     z-index: 4;
     background-color: #4F4F4F;
@@ -110,72 +112,131 @@ html, body{
     border: none;
     width: 70px;
     height: 60px;
+    border-bottom: 6px solid #363636;
     position: fixed;
+    cursor: pointer;
     -webkit-clip-path: polygon(10% 0, 100% 0%, 92% 100%, 0% 100%);
     clip-path: polygon(10% 0, 100% 0%, 92% 100%, 0% 100%);
+}
+
+.urna .telaBotoes .btn:active {
+    position: fixed;
+    border-bottom: none;
+    height: 54px;
+}
+
+.urna .telaBotoes .btn.btn1:active{
+    top: 176px;
+}
+.urna .telaBotoes .btn.btn2:active{
+    top: 176px;
+}
+.urna .telaBotoes .btn.btn3:active{
+    top: 176px;
+}
+.urna .telaBotoes .btn.btn4:active{
+    top: 256px;
+}
+.urna .telaBotoes .btn.btn5:active{
+    top: 256px;
+}
+.urna .telaBotoes .btn.btn6:active{
+    top: 256px;
+}
+.urna .telaBotoes .btn.btn7:active{
+    top: 336px;
+}
+.urna .telaBotoes .btn.btn8:active{
+    top: 336px;
+}
+.urna .telaBotoes .btn.btn9:active{
+    top: 336px;
+}
+.urna .telaBotoes .btn.btn0:active{
+    top: 416px;
 }
 
 .urna .telaBotoes .btn.btn1 {
     top: 170px;
     left: 820px;  
 }
+
 .urna .telaBotoes .btn.btn2 {
     top: 170px;
     left: 910px;  
 }
+
 .urna .telaBotoes .btn.btn3 {
     top: 170px;
     left: 1000px;  
 }
+
 .urna .telaBotoes .btn.btn4 {
     top: 250px;
     left: 812px;  
 }
+
 .urna .telaBotoes .btn.btn5 {
     top: 250px;
     left: 902px;  
 }
+
 .urna .telaBotoes .btn.btn6 {
     top: 250px;
     left: 992px;  
 }
+
 .urna .telaBotoes .btn.btn7 {
     top: 330px;
     left: 805px;  
 }
+
 .urna .telaBotoes .btn.btn8 {
     top: 330px;
     left: 895px;  
 }
+
 .urna .telaBotoes .btn.btn9 {
     top: 330px;
     left: 985px;  
 }
+
 .urna .telaBotoes .btn.btn0 {
     top: 410px;
     left: 887px;  
 }
 
 .urna .telaBotoes .btnBranco{
-     z-index: 4;
+    z-index: 4;
     background-color: #FFF;
+    border-bottom:6px solid #DDD;
     font-size: 20px;
-    border: none;
     width: 100px;
     height: 70px;
     position: fixed;
     top: 500px;
     left: 755px;  
+    cursor: pointer;
 
     -webkit-clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
     clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
+}
+.urna .telaBotoes .btnBranco:active{
+    border: none;
+    position: fixed;
+    top: 506px;
+    height: 64px;
 }
 
 .urna .telaBotoes .btnCorrige{
     z-index: 4;
     background-color: #FFA500;
     font-size: 20px;
-    border: none;
+    border-bottom: 6px solid #DD9500;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
     width: 100px;
     height: 70px;
     position: fixed;
@@ -186,11 +247,22 @@ html, body{
     clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
 }
 
+.urna .telaBotoes .btnCorrige:active{
+    border: none;
+    position: fixed;
+    top: 506px;
+    height: 64px;
+}
+
 .urna .telaBotoes .btnConfirma{
-     z-index: 4;
+    z-index: 4;
     background-color: #228B22;
     font-size: 19px;
-    border: none;
+    border-bottom: 6px solid #006600;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
     width: 110px;
     height: 90px;
     position: fixed;
@@ -200,29 +272,42 @@ html, body{
     -webkit-clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
     clip-path: polygon(6% 0, 100% 0%, 95% 100%, 0% 100%);
 }
+
+.urna .telaBotoes .btnConfirma:active{
+    border: none;
+    position: fixed;
+    top: 486px;
+    height: 84px;
+}
+
 .seuVoto{
     font-size: 20px;
     margin-left: 50px;
 }
+
 h2{
     text-align: center;
     margin-top: -20px;
     font-size: 30px;
 }
+
 #esq{
     position: relative;
     float: left;
     left:0px;
 }
+
 #dir{
     position: relative;
     float: left;
 }
+
 .num{
     font-size: 25px;
     margin-left: 50px;
     margin-top: -10px;
 }
+
 #num1{
     background-color: #FFF;
     float: left;
@@ -232,6 +317,7 @@ h2{
     margin-left: 10px;
     margin-top: -15px;
 }
+
 #num2{
     background-color: #FFF;
     float: left;
@@ -241,41 +327,61 @@ h2{
     margin-left: 3px;
     margin-top: -15px;
 }
+
+#num1 p{
+    font-size: 40px;
+    margin-top: -2px;
+    margin-left: 5px;
+}
+
+#num2 p{
+    font-size: 40px;
+    margin-top: -2px;
+    margin-left: 5px;
+}
+
 .nome{
     float: left;
     font-size: 25px;
     margin-left: 50px;
     margin-top: 25px;
 }
+
 .nomeCanditado{
     float: left;
     font-size: 25px;
     margin-top: 25px;
     margin-left: 30px;
 }
+
 .partido{
     float: left;
     font-size: 25px;
     margin-left: 50px;
     margin-top: 25px;
 }
+
 .nomePartido{
     float: left;
     font-size: 25px;
     margin-top: 25px;
     margin-left: 20px;
 }
+
 .group:before,
 .group:after {
     content: "";
     display: table;
-} 
+}
+
 .group:after {
     clear: both;
 }
+
 .group {
      zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
+
 #foto1 {
     position: absolute;
     top: 0;
@@ -286,6 +392,7 @@ h2{
     -webkit-clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
     clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
 }
+
 #foto2 {
     position: absolute;
     top: 220px;
@@ -296,8 +403,9 @@ h2{
     -webkit-clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
     clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
 }
+
 #foto1 .estiquetaFoto1 {
-    background-color: #C0C0C0;
+    background-color: #DCDCDC;
     width: 171px;
     height: 30px;
     position: absolute;
@@ -306,13 +414,15 @@ h2{
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+
 #foto1 .estiquetaFoto1 p{
     text-align: center;
     font-size: 25px;
     margin-top: 0;
 }
+
 #foto2 .estiquetaFoto2 {
-    background-color: #C0C0C0;
+    background-color: #DCDCDC;
     width: 133px;
     height: 30px;
     position: absolute;
@@ -321,50 +431,59 @@ h2{
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+
 #foto2 .estiquetaFoto2 p {
     text-align: center;
     font-size: 19px;
     margin-top: 3px;
 }
+
 hr {
     border: 2px solid #000;
     margin-top: 60px;
 }
+
 .vice{
     float: left;
     font-size: 25px;
     margin-left: 50px;
     margin-top: 25px;
 }
+
 .nomeVice{
     float: left;
     font-size: 25px;
     margin-top: 25px;
     margin-left: 50px;
 }
+
 .info{
     font-size: 18px;
     margin-left: 15px;
     margin-top: -8px;
 }
+
 .corVerde {
     float: left;
     font-size: 20px;
     margin-left: 10px;
     margin-top: -10px;
 }
+
 .msgVerde {
     float: left;
     font-size: 20px;
     margin-top: -10px;
     margin-left: 40px;
 }
+
 .corLaranja {
     float: left;
     font-size: 20px;
     margin-left: 10px;
     margin-top: 0px;
 }
+
 .msgLaranja {
     float: left;
     font-size: 20px;
