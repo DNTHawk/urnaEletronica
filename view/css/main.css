@@ -210,7 +210,7 @@ html, body{
     z-index: 4;
     background-color: #FFF;
     border-bottom:6px solid #DDD;
-    font-size: 20px;
+    font-size: 18px;
     width: 100px;
     height: 70px;
     position: fixed;
@@ -231,7 +231,7 @@ html, body{
 .urna .telaBotoes .btnCorrige{
     z-index: 4;
     background-color: #FFA500;
-    font-size: 20px;
+    font-size: 18px;
     border-bottom: 6px solid #DD9500;
     border-top: none;
     border-left: none;
@@ -257,7 +257,7 @@ html, body{
 .urna .telaBotoes .btnConfirma{
     z-index: 4;
     background-color: #228B22;
-    font-size: 19px;
+    font-size: 18px;
     border-bottom: 6px solid #006600;
     border-top: none;
     border-left: none;

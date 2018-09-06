@@ -7,7 +7,6 @@
   <title>Urna Eletronica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -31,10 +30,10 @@
         <div id="esq" class="num">Número:</div>
         <div id="dir">
           <div id="num1">
-            <p>9</p>
+            <p id="dig1"></p>
           </div>
           <div id="num2">
-            <p>9</p>
+            <p id="dig2"></p>
           </div>
         </div>
       </div>
@@ -67,22 +66,28 @@
       <p>JUSTIÇA ELEITORAL</p>
     </div>
     <div class="telaBotoes">
-      <button id="btn1" class="btn btn1">1</button>
-      <button id="btn2" class="btn btn2">2</button>
-      <button id="btn3" class="btn btn3">3</button>
-      <button id="btn4" class="btn btn4">4</button>
-      <button id="btn5" class="btn btn5">5</button>
-      <button id="btn6" class="btn btn6">6</button>
-      <button id="btn7" class="btn btn7">7</button>
-      <button id="btn8" class="btn btn8">8</button>
-      <button id="btn9" class="btn btn9">9</button>
-      <button id="btn0" class="btn btn0">0</button>
+      <button id="btn1" class="btn btn1" onclick="pressionaBotao('btn1')">1</button>
+      <button id="btn2" class="btn btn2" onclick="pressionaBotao('btn2')">2</button>
+      <button id="btn3" class="btn btn3" onclick="pressionaBotao('btn3')">3</button>
+      <button id="btn4" class="btn btn4" onclick="pressionaBotao('btn4')">4</button>
+      <button id="btn5" class="btn btn5" onclick="pressionaBotao('btn5')">5</button>
+      <button id="btn6" class="btn btn6" onclick="pressionaBotao('btn6')">6</button>
+      <button id="btn7" class="btn btn7" onclick="pressionaBotao('btn7')">7</button>
+      <button id="btn8" class="btn btn8" onclick="pressionaBotao('btn8')">8</button>
+      <button id="btn9" class="btn btn9" onclick="pressionaBotao('btn9')">9</button>
+      <button id="btn0" class="btn btn0" onclick="pressionaBotao('btn0')">0</button>
 
-      <button id="btnBranco" class="btnBranco">BRANCO</button>
-      <button id="btnCorrige" class="btnCorrige">CORRIGE</button>
-      <button id="btnConfirma" class="btnConfirma">CONFIRMA</button>
+      <button id="btnBranco" class="btnBranco" onclick="branco()">BRANCO</button>
+      <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
+      <button id="btnConfirma" class="btnConfirma" onclick="play()">CONFIRMA</button>
     </div>
   </div>
+
+  <audio id="audio">
+    <source src="./files/som_urna_confirma.mp3" type="audio/mp3">
+  </audio>
+
+  <script src="js/botoes.js"></script>
 </body>
 
 </html>
