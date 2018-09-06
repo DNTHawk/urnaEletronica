@@ -1,11 +1,8 @@
-// const teste = require('./teste')
-
 let botao = ''
 let listaNumeros = []
 let numeroCandidatoPresidente = ''
 
 const pressionaBotao = (id) => {
-  // teste.teste()
   if (listaNumeros.length < 2) {
 
     botao = document.getElementById(id).innerText
