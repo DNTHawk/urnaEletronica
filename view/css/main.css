@@ -327,7 +327,33 @@ h2{
     margin-left: 3px;
     margin-top: -15px;
 }
-
+#num3{
+    background-color: #FFF;
+    float: left;
+    width: 30px;
+    height: 40px;
+    border: solid 1px #000;
+    margin-left: 3px;
+    margin-top: -15px;
+}
+#num4{
+    background-color: #FFF;
+    float: left;
+    width: 30px;
+    height: 40px;
+    border: solid 1px #000;
+    margin-left: 3px;
+    margin-top: -15px;
+}
+#num5{
+    background-color: #FFF;
+    float: left;
+    width: 30px;
+    height: 40px;
+    border: solid 1px #000;
+    margin-left: 3px;
+    margin-top: -15px;
+}
 #num1 p{
     font-size: 40px;
     margin-top: -2px;
@@ -338,8 +364,24 @@ h2{
     font-size: 40px;
     margin-top: -2px;
     margin-left: 5px;
+
 }
 
+#num3 p{
+    font-size: 40px;
+    margin-top: -2px;
+    margin-left: 5px;
+}
+#num4 p{
+    font-size: 40px;
+    margin-top: -2px;
+    margin-left: 5px;
+}
+#num5 p{
+    font-size: 40px;
+    margin-top: -2px;
+    margin-left: 5px;
+}
 .nome{
     float: left;
     font-size: 25px;
@@ -442,6 +484,18 @@ hr {
     border: 2px solid #000;
     margin-top: 60px;
 }
+#senador hr {
+    border: 2px solid #000;
+    margin-top: 120px;
+}
+#deputadoFederal hr {
+    border: 2px solid #000;
+    margin-top: 120px;
+}
+#deputadoEstadual hr {
+    border: 2px solid #000;
+    margin-top: 120px;
+}
 
 .vice{
     float: left;
@@ -489,4 +543,7 @@ hr {
     font-size: 20px;
     margin-top: 0px;
     margin-left: 15px;
+}
+.hidden{
+  display: none;  
 }
