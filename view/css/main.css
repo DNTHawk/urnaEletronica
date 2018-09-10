@@ -3,6 +3,12 @@ html, body{
     height: 100%;
 }
 
+#fim h1{
+    font-size: 200px;
+    text-align: center;
+    margin-top: 100px;
+}
+
 .fundo {
     z-index: 1;
     width: 300px;

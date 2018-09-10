@@ -8,6 +8,7 @@ document.getElementById('deputadoFederal').hidden = true
 document.getElementById('senador').hidden = true
 document.getElementById('governador').hidden = true
 document.getElementById('presidente').hidden = true
+document.getElementById('fim').hidden = true
 
 const limpaCampos = () => {
   listaNumeros = []
@@ -82,6 +83,8 @@ const confirma = () => {
     case 'Governador':
       candidato = 'Presidente'
       break
+    case 'Presidente':
+      candidato = ''
   }
   manipulaTelas()
 }
@@ -96,9 +99,12 @@ const manipulaTelas = () => {
   } else if (candidato === 'Governador') {
     document.getElementById('senador').hidden = true
     document.getElementById('governador').hidden = false
-  } else {
+  } else if (candidato === 'Presidente') {
     document.getElementById('governador').hidden = true
     document.getElementById('presidente').hidden = false
+  } else {
+    document.getElementById('presidente').hidden = true
+    document.getElementById('fim').hidden = false
   }
 }
 
