@@ -1,3 +1,28 @@
+<?php 
+
+include("../system/conexao.php");
+
+try {
+  $conexao = db_connect();
+  $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conexao->exec("set names utf8");
+} catch (PDOException $erro) {
+  echo "Erro na conexão:" . $erro->getMessage();
+}
+
+// $sql = "SELECT * FROM tipoCandidato";
+// $query = $conexao->query($sql);
+
+// $return = $query->fetchAll(PDO::FETCH_ASSOC);
+
+// $returnConvertidoJSON = json_encode($return);
+// var_dump(json_encode($returnConvertidoJSON));
+
+// echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
+
+// exit;
+
+?>
 <!DOCTYPE html>
 <html>
 
