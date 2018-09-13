@@ -105,14 +105,14 @@ function cadastrar(){
 
     $nome_imagem_candidato = pegaDadosImagemCandidato();
 
-    $caminho_imagem_candidato = "../processa/fotos/" . $nome_imagem_candidato;
+    $caminho_imagem_candidato = "../system/fotos/" . $nome_imagem_candidato;
 
     move_uploaded_file($fotoCandidato["tmp_name"], $caminho_imagem_candidato);
 
     if ($fotoVice != 'NULL') {
         $nome_imagem_vice = pegaDadosImagemVice();
 
-        $caminho_imagem_vice = "../processa/fotos/" . $nome_imagem;
+        $caminho_imagem_vice = "../system/fotos/" . $nome_imagem;
 
         move_uploaded_file($foto["tmp_name"], $caminho_imagem_vice);
     }else{
@@ -122,7 +122,7 @@ function cadastrar(){
     try {
         if ($idCandidato != "") {
 
-            $stmt = $conexao->prepare("UPDATE candidato  SET numero=?, nome=?, partido=?, nomeVice=?, fotoCandidato=?, fotoVice=?, tipoCandidato=?  WHERE idCandidato = ?");
+            $stmt = $conexao->prepare("UPDATE candidato  SET numero=?, tipoCandidato=?, partido=?, nomeCandidato=?, nomeVice=?, fotoCandidato=?, fotoVice=?,   WHERE idCandidato = ?");
             $stmt->bindParam(8, $idCandidato);
 
             $stmt->bindParam(1, $numero);
@@ -149,11 +149,11 @@ function cadastrar(){
             }
         } else {
 
-            $stmt = $conexao->prepare(" INSERT INTO especialidade (nomeEspecialidade, descricao, linkImagem) VALUES ('$especialidade','$descricao','$caminho_imagem')");
+            $stmt = $conexao->prepare(" INSERT INTO candidato (nomeEspecialidade, descricao, linkImagem) VALUES ('$especialidade','$descricao','$caminho_imagem')");
 
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
-                    echo "<script language='javascript' type='text/javascript'>alert('Dados cadastrados com sucesso!');window.location.href='../cadastro/cadastros.php';</script>";
+                    echo "<script language='javascript' type='text/javascript'>alert('Dados cadastrados com sucesso!');window.location.href='../view/cad_candidato.php';</script>";
                 } else {
                     echo "<script>alert('Erro ao efetivar o cadastro!')</script>";
                 }
