@@ -67,10 +67,28 @@ try {
                         <input type="text" name="nome" class="form-control" require>
                     </div>
                 </div>
-                <div id="partido" class="col-md-3">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="partido">Partido:</label>
-                        <input type="text" name="partido" class="form-control" require>
+                        <?php
+                        $sql = "SELECT * from partidos order by idPartido asc";
+                        $stm = $conexao->prepare($sql);
+                        $stm->execute();
+                        $partidos = $stm->fetchAll(PDO::FETCH_OBJ);
+                        ?>
+                        <select class="form-control" name="partido" id="partido" require>
+                            <?php 
+                            if (isset($idpartido) && $idpartido != null || $idpartido != "") { 
+                                ?> <option value="<?= $descricao ?>"><?= $descricao ?></option> <?php
+                            } else {
+                                ?><option value="">Escolha o partido</option><?php
+                            }
+                            ?>
+                        <?php foreach ($partidos as $partido) : ?>
+                            <option value=<?= $partido->idPartido?>><?= $partido->descricao?></option>
+                        <?php endforeach; ?>
+                        <span class='msg-erro msg-status'></span>
+                        </select>
                     </div>
                 </div>
             </div>
