@@ -10,17 +10,14 @@ try {
   echo "Erro na conexão:" . $erro->getMessage();
 }
 
-// $sql = "SELECT * FROM tipoCandidato";
-// $query = $conexao->query($sql);
+$sql = "SELECT * FROM tipoCandidato";
+$query = $conexao->query($sql);
 
-// $return = $query->fetchAll(PDO::FETCH_ASSOC);
+$return = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// $returnConvertidoJSON = json_encode($return);
-// var_dump(json_encode($returnConvertidoJSON));
+$returnConvertidoJSON = json_encode($return);
 
-// echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
-
-// exit;
+echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
 
 ?>
 <!DOCTYPE html>

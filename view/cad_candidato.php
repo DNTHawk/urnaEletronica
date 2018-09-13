@@ -22,9 +22,9 @@ try {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-    
     <div class="container">
-        <form action="../system/proc_cad_candidato.php" method="POST">
+        <form action="../system/proc_cad_candidato.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="idCandidato" value="">
             <div class="row" style="margin-top:30px">
                 <div class="com-md-12">
                     <h2>Cadastro de Candidato</h2>
@@ -43,13 +43,13 @@ try {
                         <select class="form-control" name="tipoCandidato" id="tipoCandidato" require>
                             <?php 
                             if (isset($idTipoCandidato) && $idTipoCandidato != null || $idTipoCandidato != "") { 
-                                ?> <option value="<?= $tipoCandidato ?>"><?= $tipoCandidato ?></option> <?php
+                                ?> <option value="<?= $idTipoCandidato ?>"><?= $tipoCandidato ?></option> <?php
                             } else {
                                 ?><option value="">Escolha tipo candidato</option><?php
                             }
                             ?>
                         <?php foreach ($candidatos as $candidato) : ?>
-                            <option value=<?= $candidato->tipoCandidato ?>><?= $candidato->tipoCandidato?></option>
+                            <option value=<?= $candidato->idTipoCandidato ?>><?= $candidato->tipoCandidato?></option>
                         <?php endforeach; ?>
                         <span class='msg-erro msg-status'></span>
                         </select>
@@ -71,15 +71,15 @@ try {
                     <div class="form-group">
                         <label for="partido">Partido:</label>
                         <?php
-                        $sql = "SELECT * from partidos order by idPartido asc";
+                        $sql = "SELECT * from partido order by idPartido asc";
                         $stm = $conexao->prepare($sql);
                         $stm->execute();
                         $partidos = $stm->fetchAll(PDO::FETCH_OBJ);
                         ?>
                         <select class="form-control" name="partido" id="partido" require>
                             <?php 
-                            if (isset($idpartido) && $idpartido != null || $idpartido != "") { 
-                                ?> <option value="<?= $descricao ?>"><?= $descricao ?></option> <?php
+                            if (isset($idPartido) && $idPartido != null || $idPartido != "") { 
+                                ?> <option value="<?= $idPartido ?>"><?= $descricao ?></option> <?php
                             } else {
                                 ?><option value="">Escolha o partido</option><?php
                             }
@@ -108,13 +108,12 @@ try {
                 <div id="fotoVice" class="col-md-4">
                     <div class="form-group">
                         <label for="fotoVice">Foto Vice:</label>
-                        <input type="file" name="fotoCandidato" require>
+                        <input type="file" name="fotoVice" require>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px;">
                 <div class="col-md-3">
-                    <input type="hidden" name="idCandidato" value="">
                     <input type="submit" value="Enviar" class="btn btn-success btn-block" >
                 </div>
             </div>
