@@ -10,14 +10,14 @@ try {
   echo "Erro na conexão:" . $erro->getMessage();
 }
 
-$sql = "SELECT * FROM tipoCandidato";
+$sql = "SELECT * FROM candidato, partido WHERE partido.idPartido = candidato.partido";
 $query = $conexao->query($sql);
 
 $return = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $returnConvertidoJSON = json_encode($return);
 
-echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
+echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
 
 ?>
 <!DOCTYPE html>
@@ -38,6 +38,7 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
     <div class="telaInfo">
       <div id="deputadoEstadual">
         <div id="foto1">
+        <img src="" id="fotoDE"/>
           <div class="estiquetaFoto1">
             <p>Deputado Estadual</p>
           </div>
@@ -66,11 +67,11 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
         </div>
         <div class="group">
           <div class="nome">Nome:</div>
-          <div class="nomeCanditado">Dath Vader</div>
+          <div class="nomeCanditado" id="nomeDE"></div>
         </div>
         <div class="group">
           <div class="partido">Partido:</div>
-          <div class="nomePartido">Dark Side</div>
+          <div class="nomePartido" id="partidoDE"></div>
         </div>
         <hr>
         <p class="info">Aperte a Tecla</p>
@@ -85,6 +86,7 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="deputadoFederal">
         <div id="foto1">
+        <img src="" id="fotoDF">
           <div class="estiquetaFoto1">
             <p>Deputado Federal</p>
           </div>
@@ -110,11 +112,11 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
         </div>
         <div class="group">
           <div class="nome">Nome:</div>
-          <div class="nomeCanditado">Dath Vader</div>
+          <div class="nomeCanditado" id="nomeDF"></div>
         </div>
         <div class="group">
           <div class="partido">Partido:</div>
-          <div class="nomePartido">Dark Side</div>
+          <div class="nomePartido" id="partidoDF"></div>
         </div>
         <hr>
         <p class="info">Aperte a Tecla</p>
@@ -129,6 +131,7 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="senador">
         <div id="foto1">
+        <img src="" id="fotoSe">
           <div class="estiquetaFoto1">
             <p>Senador</p>
           </div>
@@ -151,11 +154,11 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
         </div>
         <div class="group">
           <div class="nome">Nome:</div>
-          <div class="nomeCanditado">Dath Vader</div>
+          <div class="nomeCanditado" id="nomeSe"></div>
         </div>
         <div class="group">
           <div class="partido">Partido:</div>
-          <div class="nomePartido">Dark Side</div>
+          <div class="nomePartido" id="partidoSe"></div>
         </div>
         <hr>
         <p class="info">Aperte a Tecla</p>
@@ -170,11 +173,13 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="governador">
         <div id="foto1">
+        <img src="" id="fotoGov"/>
           <div class="estiquetaFoto1">
             <p>Governador</p>
           </div>
         </div>
         <div id="foto2">
+        <img src="" id="fotoVicGov"/>
           <div class="estiquetaFoto2">
             <p>Vice-presidente</p>
           </div>
@@ -194,15 +199,15 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
         </div>
         <div class="group">
           <div class="nome">Nome:</div>
-          <div class="nomeCanditado">Dath Vader</div>
+          <div class="nomeCanditado" id="nomeGov"></div>
         </div>
         <div class="group">
           <div class="partido">Partido:</div>
-          <div class="nomePartido">Dark Side</div>
+          <div class="nomePartido" id="partidoGov"></div>
         </div>
         <div class="group">
           <div class="vice">Vice:</div>
-          <div class="nomeVice">Stormtrooper</div>
+          <div class="nomeVice" id="nomeVicGov"></div>
         </div>
         <hr>
         <p class="info">Aperte a Tecla</p>
@@ -217,11 +222,13 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="presidente">
         <div id="foto1">
+          <img src="" id="fotoPre"/>
           <div class="estiquetaFoto1">
             <p>Presidente</p>
           </div>
         </div>
         <div id="foto2">
+        <img src="" id="fotoVicPre"/>
           <div class="estiquetaFoto2">
             <p>Vice-presidente</p>
           </div>
@@ -241,15 +248,15 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
         </div>
         <div class="group">
           <div class="nome">Nome:</div>
-          <div class="nomeCanditado">Dath Vader</div>
+          <div class="nomeCanditado" id="nomePre"></div>
         </div>
         <div class="group">
           <div class="partido">Partido:</div>
-          <div class="nomePartido">Dark Side</div>
+          <div class="nomePartido" id="partidoPre"></div>
         </div>
         <div class="group">
           <div class="vice">Vice:</div>
-          <div class="nomeVice">Stormtrooper</div>
+          <div class="nomeVice" id="nomeVicPre"></div>
         </div>
         <hr>
         <p class="info">Aperte a Tecla</p>
@@ -272,16 +279,16 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
       <p>JUSTIÇA ELEITORAL</p>
     </div>
     <div class="telaBotoes">
-      <button id="btn1" class="btn btn1" onclick="pressionaBotao('btn1')">1</button>
-      <button id="btn2" class="btn btn2" onclick="pressionaBotao('btn2')">2</button>
-      <button id="btn3" class="btn btn3" onclick="pressionaBotao('btn3')">3</button>
-      <button id="btn4" class="btn btn4" onclick="pressionaBotao('btn4')">4</button>
-      <button id="btn5" class="btn btn5" onclick="pressionaBotao('btn5')">5</button>
-      <button id="btn6" class="btn btn6" onclick="pressionaBotao('btn6')">6</button>
-      <button id="btn7" class="btn btn7" onclick="pressionaBotao('btn7')">7</button>
-      <button id="btn8" class="btn btn8" onclick="pressionaBotao('btn8')">8</button>
-      <button id="btn9" class="btn btn9" onclick="pressionaBotao('btn9')">9</button>
-      <button id="btn0" class="btn btn0" onclick="pressionaBotao('btn0')">0</button>
+      <button id="btn1" class="btn btn1" onclick="pressionaBotao('btn1', listaCandidatos)">1</button>
+      <button id="btn2" class="btn btn2" onclick="pressionaBotao('btn2', listaCandidatos)">2</button>
+      <button id="btn3" class="btn btn3" onclick="pressionaBotao('btn3', listaCandidatos)">3</button>
+      <button id="btn4" class="btn btn4" onclick="pressionaBotao('btn4', listaCandidatos)">4</button>
+      <button id="btn5" class="btn btn5" onclick="pressionaBotao('btn5', listaCandidatos)">5</button>
+      <button id="btn6" class="btn btn6" onclick="pressionaBotao('btn6', listaCandidatos)">6</button>
+      <button id="btn7" class="btn btn7" onclick="pressionaBotao('btn7', listaCandidatos)">7</button>
+      <button id="btn8" class="btn btn8" onclick="pressionaBotao('btn8', listaCandidatos)">8</button>
+      <button id="btn9" class="btn btn9" onclick="pressionaBotao('btn9', listaCandidatos)">9</button>
+      <button id="btn0" class="btn btn0" onclick="pressionaBotao('btn0', listaCandidatos)">0</button>
 
       <button id="btnBranco" class="btnBranco" onclick="branco()">BRANCO</button>
       <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
@@ -293,6 +300,9 @@ echo "<script>let listaTipoCandidatos = ".$returnConvertidoJSON."</script>";
     </audio>
 
     <script src="js/botoes.js"></script>
+    <?php
+      echo "<script>listaCandidato(listaCandidatos)</script>"
+    ?>
 </body>
 
 </html>

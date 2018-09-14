@@ -1,0 +1,1 @@
+const listaCandidatos = (lista) => console.log(lista)
