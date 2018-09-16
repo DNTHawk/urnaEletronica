@@ -271,25 +271,36 @@ const pressionaBotao = (id) => {
 }
 
 const confirma = () => {
-  audio.play()
-  switch (candidato) {
-    case 'Deputado Estadual':
-      candidato = 'Deputado Federal'
-      break
-    case 'Deputado Federal':
-      candidato = 'Senador'
-      break
-    case 'Senador':
-      candidato = 'Governador'
-      break
-    case 'Governador':
-      candidato = 'Presidente'
-      break
-    case 'Presidente':
-      candidato = ''
+  if (listaNumeros.length === 5) {
+    candidato = 'Deputado Federal'
+    manipulaTelas()
+    limpaCampos()
+    audio.play()
   }
-  manipulaTelas()
-  limpaCampos()
+  if (listaNumeros.length === 4 && candidato === 'Deputado Federal') {
+    candidato = 'Senador'
+    manipulaTelas()
+    limpaCampos()
+    audio.play()
+  }
+  if (listaNumeros.length === 3 && candidato === 'Senador') {
+    candidato = 'Governador'
+    manipulaTelas()
+    limpaCampos()
+    audio.play()
+  }
+  if (listaNumeros.length === 2 && candidato === 'Governador') {
+    candidato = 'Presidente'
+    manipulaTelas()
+    limpaCampos()
+    audio.play()
+  }
+  if (listaNumeros.length === 2 && candidato === 'Presidente') {
+    candidato = ''
+    manipulaTelas()
+    limpaCampos()
+    audio.play()
+  }
 }
 
 const manipulaTelas = () => {
