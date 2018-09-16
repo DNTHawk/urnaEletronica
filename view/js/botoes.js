@@ -5,6 +5,7 @@ let candidato = 'Deputado Estadual'
 let arrayCandidatos = []
 let imagem = ''
 let imagemVice = ''
+let permiteAvanco = null
 
 document.getElementById('deputadoEstadual').hidden = false
 document.getElementById('deputadoFederal').hidden = true
@@ -18,6 +19,8 @@ const listaCandidato = (listaCandidatos) => {
 }
 
 const limpaCampos = () => {
+  listaNumeros = []
+  imagem = ''
   document.getElementById('dig1').innerHTML = ''
   document.getElementById('dig2').innerHTML = ''
   document.getElementById('dig3').innerHTML = ''
@@ -34,8 +37,6 @@ const limpaCampos = () => {
   document.getElementById('g2').innerHTML = ''
   document.getElementById('p1').innerHTML = ''
   document.getElementById('p2').innerHTML = ''
-  listaNumeros = []
-  imagem = ''
   document.getElementById('fotoDE').src = ''
   document.getElementById('nomeDE').innerHTML = ''
   document.getElementById('partidoDE').innerHTML = ''
@@ -58,7 +59,6 @@ const limpaCampos = () => {
 }
 
 const pressionaBotao = (id) => {
-  console.log(arrayCandidatos)
   if (candidato === 'Deputado Estadual') {
     if (listaNumeros.length < 5) {
 
@@ -104,9 +104,9 @@ const pressionaBotao = (id) => {
       }
       if (listaNumeros.length === 5) {
         let text = listaNumeros.join().replace(/,/g, '')
-        console.log(text)
         for (let i in arrayCandidatos) {
           if (text === arrayCandidatos[i].numero) {
+            permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             document.getElementById('fotoDE').src = imagem
             document.getElementById('nomeDE').innerHTML = arrayCandidatos[i].nomeCandidato
@@ -119,8 +119,6 @@ const pressionaBotao = (id) => {
     if (listaNumeros.length < 4) {
       botao = document.getElementById(id).innerText
       listaNumeros.push(botao)
-
-      console.log(listaNumeros)
 
       for (let i in listaNumeros) {
         if (listaNumeros.length === 1) {
@@ -150,9 +148,9 @@ const pressionaBotao = (id) => {
       }
       if (listaNumeros.length === 4) {
         let text = listaNumeros.join().replace(/,/g, '')
-        console.log(text)
         for (let i in arrayCandidatos) {
           if (text === arrayCandidatos[i].numero) {
+            permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             document.getElementById('fotoDF').src = imagem
             document.getElementById('nomeDF').innerHTML = arrayCandidatos[i].nomeCandidato
@@ -166,8 +164,6 @@ const pressionaBotao = (id) => {
 
       botao = document.getElementById(id).innerText
       listaNumeros.push(botao)
-
-      console.log(listaNumeros)
 
       for (let i in listaNumeros) {
         if (listaNumeros.length === 1) {
@@ -188,9 +184,9 @@ const pressionaBotao = (id) => {
       }
       if (listaNumeros.length === 3) {
         let text = listaNumeros.join().replace(/,/g, '')
-        console.log(text)
         for (let i in arrayCandidatos) {
           if (text === arrayCandidatos[i].numero) {
+            permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             document.getElementById('fotoSe').src = imagem
             document.getElementById('nomeSe').innerHTML = arrayCandidatos[i].nomeCandidato
@@ -205,8 +201,6 @@ const pressionaBotao = (id) => {
       botao = document.getElementById(id).innerText
       listaNumeros.push(botao)
 
-      console.log(listaNumeros)
-
       for (let i in listaNumeros) {
         if (listaNumeros.length === 1) {
           document.getElementById('g1').innerHTML = listaNumeros[0]
@@ -219,9 +213,9 @@ const pressionaBotao = (id) => {
       }
       if (listaNumeros.length === 2) {
         let text = listaNumeros.join().replace(/,/g, '')
-        console.log(text)
         for (let i in arrayCandidatos) {
           if (text === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '4') {
+            permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             imagemVice = arrayCandidatos[i].fotoVice
             document.getElementById('fotoGov').src = imagem
@@ -239,8 +233,6 @@ const pressionaBotao = (id) => {
       botao = document.getElementById(id).innerText
       listaNumeros.push(botao)
 
-      console.log(listaNumeros)
-
       for (let i in listaNumeros) {
         if (listaNumeros.length === 1) {
           document.getElementById('p1').innerHTML = listaNumeros[0]
@@ -253,9 +245,9 @@ const pressionaBotao = (id) => {
       }
       if (listaNumeros.length === 2) {
         let text = listaNumeros.join().replace(/,/g, '')
-        console.log(text)
-        for (let i in arrayCandidatos) {
+          for (let i in arrayCandidatos) {
           if (text === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '5') {
+            permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             imagemVice = arrayCandidatos[i].fotoVice
             document.getElementById('fotoPre').src = imagem
@@ -271,31 +263,31 @@ const pressionaBotao = (id) => {
 }
 
 const confirma = () => {
-  if (listaNumeros.length === 5) {
+  if (listaNumeros.length === 5 && permiteAvanco) {
     candidato = 'Deputado Federal'
     manipulaTelas()
     limpaCampos()
     audio.play()
   }
-  if (listaNumeros.length === 4 && candidato === 'Deputado Federal') {
+  if (listaNumeros.length === 4 && candidato === 'Deputado Federal' && permiteAvanco) {
     candidato = 'Senador'
     manipulaTelas()
     limpaCampos()
     audio.play()
   }
-  if (listaNumeros.length === 3 && candidato === 'Senador') {
+  if (listaNumeros.length === 3 && candidato === 'Senador' && permiteAvanco) {
     candidato = 'Governador'
     manipulaTelas()
     limpaCampos()
     audio.play()
   }
-  if (listaNumeros.length === 2 && candidato === 'Governador') {
+  if (listaNumeros.length === 2 && candidato === 'Governador' && permiteAvanco) {
     candidato = 'Presidente'
     manipulaTelas()
     limpaCampos()
     audio.play()
   }
-  if (listaNumeros.length === 2 && candidato === 'Presidente') {
+  if (listaNumeros.length === 2 && candidato === 'Presidente' && permiteAvanco) {
     candidato = ''
     manipulaTelas()
     limpaCampos()
