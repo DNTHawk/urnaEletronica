@@ -290,9 +290,28 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
       <button id="btn9" class="btn btn9" onclick="pressionaBotao('btn9', listaCandidatos)">9</button>
       <button id="btn0" class="btn btn0" onclick="pressionaBotao('btn0', listaCandidatos)">0</button>
       
-      <button id="btnBranco" class="btnBranco" onclick="branco()">BRANCO</button>
-      <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
-      <button id="btnConfirma" class="btnConfirma" onclick="confirma()">CONFIRMA</button>
+      <div id="form">
+        <form action="fim.php" method="POST">
+          <input id="depEst" type="hidden" name="depultadoEstadual" value="">
+          <input id="depFed" type="hidden" name="depultadoFederal" value="">
+          <input id="sen" type="hidden" name="senador" value="">
+          <input id="gov" type="hidden" name="governador" value="">
+          <input id="pre" type="hidden" name="presidente" value="">
+          <input id="pre" type="hidden" name="op" value="1">
+          
+        
+
+        <input type="submit" id="btnBranco" class="btnBranco" onclick="branco()" value="BRANCO">
+        <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
+        <input type="submit" class="btnConfirma" onclick="confirma()" value="CONFIRMA">
+        </form>
+      </div>
+
+      <div id="button">
+        <button id="btnBranco" class="btnBranco" onclick="branco()">BRANCO</button>
+        <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
+        <button id="btnConfirma" class="btnConfirma" onclick="confirma()">CONFIRMA</button>
+      </div>
     </div>
 
     <audio id="audio">

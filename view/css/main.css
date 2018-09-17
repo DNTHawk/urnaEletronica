@@ -50,9 +50,9 @@ html, body{
     background-color: #000;
     width: 380px;
     height: 430px;
-    position: relative;
-    left: 720px;
-    top: 15px;
+    position: fixed;
+    left: 744px;
+    top: 155px;
     -webkit-clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
 }

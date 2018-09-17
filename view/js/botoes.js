@@ -20,6 +20,9 @@ document.getElementById('governador').hidden = true
 document.getElementById('presidente').hidden = true
 document.getElementById('fim').hidden = true
 
+document.getElementById('form').hidden = true
+document.getElementById('button').hidden = false
+
 const listaCandidato = (listaCandidatos) => {
   arrayCandidatos = listaCandidatos
 }
@@ -117,6 +120,7 @@ const pressionaBotao = (id) => {
             document.getElementById('fotoDE').src = imagem
             document.getElementById('nomeDE').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('partidoDE').innerHTML = arrayCandidatos[i].descricao
+            document.getElementById('depEst').value = arrayCandidatos[i].numero
           }
         }
       }
@@ -161,6 +165,7 @@ const pressionaBotao = (id) => {
             document.getElementById('fotoDF').src = imagem
             document.getElementById('nomeDF').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('partidoDF').innerHTML = arrayCandidatos[i].descricao
+            document.getElementById('depFed').value = arrayCandidatos[i].numero
           }
         }
       }
@@ -197,6 +202,7 @@ const pressionaBotao = (id) => {
             document.getElementById('fotoSe').src = imagem
             document.getElementById('nomeSe').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('partidoSe').innerHTML = arrayCandidatos[i].descricao
+            document.getElementById('sen').value = arrayCandidatos[i].numero
           }
         }
       }
@@ -229,6 +235,7 @@ const pressionaBotao = (id) => {
             document.getElementById('nomeGov').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('nomeVicGov').innerHTML = arrayCandidatos[i].nomeVice
             document.getElementById('partidoGov').innerHTML = arrayCandidatos[i].descricao
+            document.getElementById('gov').value = arrayCandidatos[i].numero
           }
         }
       }
@@ -261,6 +268,7 @@ const pressionaBotao = (id) => {
             document.getElementById('nomePre').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('nomeVicPre').innerHTML = arrayCandidatos[i].nomeVice
             document.getElementById('partidoPre').innerHTML = arrayCandidatos[i].descricao
+            document.getElementById('pre').value = arrayCandidatos[i].numero
           }
         }
       }
@@ -314,6 +322,8 @@ const manipulaTelas = () => {
   } else if (candidato === 'Presidente') {
     document.getElementById('governador').hidden = true
     document.getElementById('presidente').hidden = false
+    document.getElementById('button').hidden = true
+    document.getElementById('form').hidden = false
   } else {
     document.getElementById('presidente').hidden = true
     document.getElementById('fim').hidden = false
