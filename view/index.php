@@ -38,7 +38,7 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
     <div class="telaInfo">
       <div id="deputadoEstadual">
         <div id="foto1">
-        <img src="" id="fotoDE"/>
+        <img class="fotoCandidato" src="" id="fotoDE"/>
           <div class="estiquetaFoto1">
             <p>Deputado Estadual</p>
           </div>
@@ -86,7 +86,7 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="deputadoFederal">
         <div id="foto1">
-        <img src="" id="fotoDF">
+        <img class="fotoCandidato" src="" id="fotoDF">
           <div class="estiquetaFoto1">
             <p>Deputado Federal</p>
           </div>
@@ -131,7 +131,7 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="senador">
         <div id="foto1">
-        <img src="" id="fotoSe">
+        <img class="fotoCandidato" src="" id="fotoSe">
           <div class="estiquetaFoto1">
             <p>Senador</p>
           </div>
@@ -173,13 +173,13 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="governador">
         <div id="foto1">
-        <img src="" id="fotoGov"/>
+        <img class="fotoCandidato" src="" id="fotoGov"/>
           <div class="estiquetaFoto1">
             <p>Governador</p>
           </div>
         </div>
         <div id="foto2">
-        <img src="" id="fotoVicGov"/>
+        <img class="fotoCandidato" src="" id="fotoVicGov"/>
           <div class="estiquetaFoto2">
             <p>Vice-presidente</p>
           </div>
@@ -222,13 +222,13 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
       </div>
       <div id="presidente">
         <div id="foto1">
-          <img src="" id="fotoPre"/>
+          <img class="fotoCandidato" src="" id="fotoPre"/>
           <div class="estiquetaFoto1">
             <p>Presidente</p>
           </div>
         </div>
         <div id="foto2">
-        <img src="" id="fotoVicPre"/>
+        <img class="fotoCandidato" src="" id="fotoVicPre"/>
           <div class="estiquetaFoto2">
             <p>Vice-presidente</p>
           </div>

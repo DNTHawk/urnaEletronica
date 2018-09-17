@@ -553,3 +553,7 @@ hr {
 .hidden{
   display: none;  
 }
+
+.fotoCandidato{
+    width: 100%;
+}
