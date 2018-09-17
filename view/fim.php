@@ -10,15 +10,12 @@ try {
     echo "Erro na conexão:" . $erro->getMessage();
 }
 
-
 $op = $_POST['op'];
 $depultadoEstadual = $_POST['depultadoEstadual'];
 $depultadoFederal = $_POST['depultadoFederal'];
 $senador = $_POST['senador'];
 $governador = $_POST['governador'];
 $presidente = $_POST['presidente'];
-
-
 
 if ($depultadoEstadual != "") {
 

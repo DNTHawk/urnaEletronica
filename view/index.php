@@ -30,7 +30,6 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
-
 <body>
   <div class="fundo"></div>
   <div class="topoUrna"></div>
@@ -298,8 +297,6 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
           <input id="gov" type="hidden" name="governador" value="">
           <input id="pre" type="hidden" name="presidente" value="">
           <input id="pre" type="hidden" name="op" value="1">
-          
-        
 
         <input type="submit" id="btnBranco" class="btnBranco" onclick="branco()" value="BRANCO">
         <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
