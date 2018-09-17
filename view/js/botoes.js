@@ -1,11 +1,17 @@
 let botao = ''
 let listaNumeros = []
+let numeroCandidatoDE = ''
 let numeroCandidatoPresidente = ''
 let candidato = 'Deputado Estadual'
 let arrayCandidatos = []
 let imagem = ''
 let imagemVice = ''
 let permiteAvanco = null
+let numeroDE = ''
+let numeroDF = ''
+let numeroSen = ''
+let numeroGov = ''
+let numeroPre = ''
 
 document.getElementById('deputadoEstadual').hidden = false
 document.getElementById('deputadoFederal').hidden = true
@@ -103,9 +109,9 @@ const pressionaBotao = (id) => {
         }
       }
       if (listaNumeros.length === 5) {
-        let text = listaNumeros.join().replace(/,/g, '')
+        numeroDE = listaNumeros.join().replace(/,/g, '')
         for (let i in arrayCandidatos) {
-          if (text === arrayCandidatos[i].numero) {
+          if (numeroDE === arrayCandidatos[i].numero) {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             document.getElementById('fotoDE').src = imagem
@@ -147,9 +153,9 @@ const pressionaBotao = (id) => {
         }
       }
       if (listaNumeros.length === 4) {
-        let text = listaNumeros.join().replace(/,/g, '')
+        numeroDF = listaNumeros.join().replace(/,/g, '')
         for (let i in arrayCandidatos) {
-          if (text === arrayCandidatos[i].numero) {
+          if (numeroDF === arrayCandidatos[i].numero) {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             document.getElementById('fotoDF').src = imagem
@@ -183,9 +189,9 @@ const pressionaBotao = (id) => {
         }
       }
       if (listaNumeros.length === 3) {
-        let text = listaNumeros.join().replace(/,/g, '')
+        numeroSen = listaNumeros.join().replace(/,/g, '')
         for (let i in arrayCandidatos) {
-          if (text === arrayCandidatos[i].numero) {
+          if (numeroSen === arrayCandidatos[i].numero) {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             document.getElementById('fotoSe').src = imagem
@@ -212,9 +218,9 @@ const pressionaBotao = (id) => {
         }
       }
       if (listaNumeros.length === 2) {
-        let text = listaNumeros.join().replace(/,/g, '')
+        numeroGov = listaNumeros.join().replace(/,/g, '')
         for (let i in arrayCandidatos) {
-          if (text === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '4') {
+          if (numeroGov === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '4') {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             imagemVice = arrayCandidatos[i].fotoVice
@@ -244,9 +250,9 @@ const pressionaBotao = (id) => {
         }
       }
       if (listaNumeros.length === 2) {
-        let text = listaNumeros.join().replace(/,/g, '')
+        numeroPre = listaNumeros.join().replace(/,/g, '')
           for (let i in arrayCandidatos) {
-          if (text === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '5') {
+          if (numeroPre === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '5') {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             imagemVice = arrayCandidatos[i].fotoVice

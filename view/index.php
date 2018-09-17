@@ -289,7 +289,7 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
       <button id="btn8" class="btn btn8" onclick="pressionaBotao('btn8', listaCandidatos)">8</button>
       <button id="btn9" class="btn btn9" onclick="pressionaBotao('btn9', listaCandidatos)">9</button>
       <button id="btn0" class="btn btn0" onclick="pressionaBotao('btn0', listaCandidatos)">0</button>
-
+      
       <button id="btnBranco" class="btnBranco" onclick="branco()">BRANCO</button>
       <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>
       <button id="btnConfirma" class="btnConfirma" onclick="confirma()">CONFIRMA</button>
