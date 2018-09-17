@@ -24,7 +24,50 @@ try {
 </head>
 <body>
     <div class="container">
-        
+        <div class="row" style="margin-top:30px;">
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="index.php">
+                            <img style="width:70%" src="img/vote.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div class="col-md-12">
+                        <p>Urna Eletronica</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="resultado.php">
+                            <img style="width:70%" src="img/results.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div class="col-md-12">
+                        <p style="margin-left: 20px">Resultados</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="cad_candidato.php">
+                            <img style="width:70%" src="img/businessman.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div class="col-md-12">
+                        <p style="margin-left: 20px">Cadastro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script src="js/resultados.js"></script>
