@@ -296,7 +296,6 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
           <input id="sen" type="hidden" name="senador" value="">
           <input id="gov" type="hidden" name="governador" value="">
           <input id="pre" type="hidden" name="presidente" value="">
-          <input id="pre" type="hidden" name="op" value="1">
 
         <input type="submit" id="btnBranco" class="btnBranco" onclick="branco()" value="BRANCO">
         <button id="btnCorrige" class="btnCorrige" onclick="corrige()">CORRIGE</button>

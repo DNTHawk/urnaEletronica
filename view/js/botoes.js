@@ -258,7 +258,7 @@ const pressionaBotao = (id) => {
       }
       if (listaNumeros.length === 2) {
         numeroPre = listaNumeros.join().replace(/,/g, '')
-          for (let i in arrayCandidatos) {
+        for (let i in arrayCandidatos) {
           if (numeroPre === arrayCandidatos[i].numero && arrayCandidatos[i].tipoCandidato === '5') {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
@@ -310,6 +310,7 @@ const confirma = () => {
 }
 
 const manipulaTelas = () => {
+  console.log(candidato)
   if (candidato === 'Deputado Federal') {
     document.getElementById('deputadoEstadual').hidden = true
     document.getElementById('deputadoFederal').hidden = false
@@ -336,7 +337,28 @@ const corrige = () => {
 }
 
 const branco = () => {
-  confirma()
+  switch (candidato) {
+    case 'Deputado Estadual':
+      document.getElementById('depEst').value = 'BRANCO'
+      candidato = 'Deputado Federal'
+      break
+    case 'Deputado Federal':
+      document.getElementById('depFed').value = 'BRANCO'
+      candidato = 'Senador'
+      break
+    case 'Senador':
+      document.getElementById('sen').value = 'BRANCO'
+      candidato = 'Governador'
+      break
+    case 'Governador':
+      document.getElementById('gov').value = 'BRANCO'
+      candidato = 'Presidente'
+      break
+    case 'Presidente':
+      document.getElementById('pre').value = 'BRANCO'
+      break
+  }
+  manipulaTelas()
   limpaCampos()
-  numeroCandidatoPresidente = 'BRANCO'
+  audio.play()
 }
