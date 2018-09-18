@@ -297,30 +297,35 @@ const confirma = () => {
     audio.play()
     manipulaTelas()
     limpaCampos()
+    permiteAvanco = false
   }
   if (listaNumeros.length === 4 && candidato === 'Deputado Federal' && permiteAvanco) {
     candidato = 'Senador'
     audio.play()
     manipulaTelas()
     limpaCampos()
+    permiteAvanco = false
   }
   if (listaNumeros.length === 3 && candidato === 'Senador' && permiteAvanco) {
     candidato = 'Governador'
     audio.play()
     manipulaTelas()
     limpaCampos()
+    permiteAvanco = false
   }
   if (listaNumeros.length === 2 && candidato === 'Governador' && permiteAvanco) {
     candidato = 'Presidente'
     audio.play()
     manipulaTelas()
     limpaCampos()
+    permiteAvanco = false
   }
   if (listaNumeros.length === 2 && candidato === 'Presidente' && permiteAvanco) {
     candidato = ''
     audio.play()
     manipulaTelas()
     limpaCampos()
+    permiteAvanco = false
   }
 }
 
