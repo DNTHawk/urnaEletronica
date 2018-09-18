@@ -58,7 +58,7 @@ try {
                 <div id="numero" class="col-md-3">
                     <div class="form-group">
                         <label for="numero">Numero Candidato:</label>
-                        <input type="text" name="numero" class="form-control" require>
+                        <input type="number" name="numero" class="form-control" require>
                     </div>
                 </div>
                 <div id="nome"class="col-md-3">
@@ -71,7 +71,7 @@ try {
                     <div class="form-group">
                         <label for="partido">Partido:</label>
                         <?php
-                        $sql = "SELECT * from partido order by idPartido asc";
+                        $sql = "SELECT * from partido WHERE partido <> 'BRANCO' order by idPartido asc";
                         $stm = $conexao->prepare($sql);
                         $stm->execute();
                         $partidos = $stm->fetchAll(PDO::FETCH_OBJ);
