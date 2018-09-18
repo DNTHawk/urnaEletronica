@@ -39,7 +39,7 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
         <div id="foto1">
         <img class="fotoCandidato" src="" id="fotoDE"/>
           <div class="estiquetaFoto1">
-            <p>Deputado Estadual</p>
+            <p style="font-size:20px">Deputado Estadual</p>
           </div>
         </div>
         <p class="seuVoto">SEU VOTO PARA</p>
@@ -87,7 +87,7 @@ echo "<script>let listaCandidatos = ".$returnConvertidoJSON."</script>";
         <div id="foto1">
         <img class="fotoCandidato" src="" id="fotoDF">
           <div class="estiquetaFoto1">
-            <p>Deputado Federal</p>
+            <p style="font-size:20px">Deputado Federal</p>
           </div>
         </div>
         <p class="seuVoto">SEU VOTO PARA</p>

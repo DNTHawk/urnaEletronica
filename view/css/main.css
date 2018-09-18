@@ -433,12 +433,12 @@ h2{
 #foto1 {
     position: absolute;
     top: 0;
-    left: 497px;
+    left: 501px;
     width: 180px;
     height: 220px;
     background-color: #FFF;
     -webkit-clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
-    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(8% 0%, 100% 0%, 91% 100%, 0% 100%);
 }
 
 #foto2 {

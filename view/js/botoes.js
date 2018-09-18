@@ -23,6 +23,14 @@ document.getElementById('fim').hidden = true
 document.getElementById('form').hidden = true
 document.getElementById('button').hidden = false
 
+document.getElementById('fotoDE').hidden = true
+document.getElementById('fotoDF').hidden = true
+document.getElementById('fotoSe').hidden = true
+document.getElementById('fotoGov').hidden = true
+document.getElementById('fotoVicGov').hidden = true
+document.getElementById('fotoPre').hidden = true
+document.getElementById('fotoVicPre').hidden = true
+
 const listaCandidato = (listaCandidatos) => {
   arrayCandidatos = listaCandidatos
 }
@@ -117,6 +125,7 @@ const pressionaBotao = (id) => {
           if (numeroDE === arrayCandidatos[i].numero) {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
+            document.getElementById('fotoDE').hidden = false
             document.getElementById('fotoDE').src = imagem
             document.getElementById('nomeDE').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('partidoDE').innerHTML = arrayCandidatos[i].descricao
@@ -162,6 +171,7 @@ const pressionaBotao = (id) => {
           if (numeroDF === arrayCandidatos[i].numero) {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
+            document.getElementById('fotoDF').hidden = false
             document.getElementById('fotoDF').src = imagem
             document.getElementById('nomeDF').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('partidoDF').innerHTML = arrayCandidatos[i].descricao
@@ -199,6 +209,7 @@ const pressionaBotao = (id) => {
           if (numeroSen === arrayCandidatos[i].numero) {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
+            document.getElementById('fotoSe').hidden = false
             document.getElementById('fotoSe').src = imagem
             document.getElementById('nomeSe').innerHTML = arrayCandidatos[i].nomeCandidato
             document.getElementById('partidoSe').innerHTML = arrayCandidatos[i].descricao
@@ -230,6 +241,8 @@ const pressionaBotao = (id) => {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             imagemVice = arrayCandidatos[i].fotoVice
+            document.getElementById('fotoGov').hidden = false
+            document.getElementById('fotoVicGov').hidden = false
             document.getElementById('fotoGov').src = imagem
             document.getElementById('fotoVicGov').src = imagemVice
             document.getElementById('nomeGov').innerHTML = arrayCandidatos[i].nomeCandidato
@@ -263,6 +276,8 @@ const pressionaBotao = (id) => {
             permiteAvanco = true
             imagem = arrayCandidatos[i].fotoCandidato
             imagemVice = arrayCandidatos[i].fotoVice
+            document.getElementById('fotoPre').hidden = false
+            document.getElementById('fotoVicPre').hidden = false
             document.getElementById('fotoPre').src = imagem
             document.getElementById('fotoVicPre').src = imagemVice
             document.getElementById('nomePre').innerHTML = arrayCandidatos[i].nomeCandidato
