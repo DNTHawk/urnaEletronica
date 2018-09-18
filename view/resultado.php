@@ -24,12 +24,18 @@ try {
 </head>
 <body>
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="index.php">
+                    <img class="return" src="img/back-arrow.png" alt="">
+                </a>
+            </div>
+        </div>
         <div style="margin-top:40px" class="row">
             <div class="col-md-12">
                 <h2>Resultados da Eleição</h2>
             </div>
         </div>
-
         <div class="row" style="margin-top: 30px">
             <div class="col-md-1"></div>
             <div class="col-md-2">

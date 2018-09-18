@@ -29,13 +29,13 @@ try {
                 <div class="row">
                     <div class="col-md-12">
                         <a href="urna.php">
-                            <img style="width:70%" src="img/vote.png" alt="">
+                            <img style="width:60%; margin-left:20%" src="img/vote.png" alt="">
                         </a>
                     </div>
                 </div>
                 <div style="margin-top:10px;" class="row">
                     <div class="col-md-12">
-                        <p>Urna Eletronica</p>
+                        <p style="text-align: center;">Urna Eletronica</p>
                     </div>
                 </div>
             </div>
@@ -43,13 +43,13 @@ try {
                 <div class="row">
                     <div class="col-md-12">
                         <a href="resultado.php">
-                            <img style="width:70%" src="img/results.png" alt="">
+                            <img style="width:60%; margin-left:20%" src="img/candidates-ranking-graphic.png" alt="">
                         </a>
                     </div>
                 </div>
                 <div style="margin-top:10px;" class="row">
                     <div class="col-md-12">
-                        <p style="margin-left: 20px">Resultados</p>
+                        <p style="text-align: center;">Resultados</p>
                     </div>
                 </div>
             </div>
@@ -57,13 +57,27 @@ try {
                 <div class="row">
                     <div class="col-md-12">
                         <a href="cad_candidato.php">
-                            <img style="width:70%" src="img/businessman.png" alt="">
+                            <img style="width:60%; margin-left:20%" src="img/businessman.png" alt="">
                         </a>
                     </div>
                 </div>
                 <div style="margin-top:10px;" class="row">
                     <div class="col-md-12">
-                        <p style="margin-left: 20px">Cadastro</p>
+                        <p style="text-align: center;">Cadastro Candidato</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="cad_partido.php">
+                            <img style="width:60%; margin-left:20%" src="img/donkey-americal-political-symbol-of-democrats.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div class="col-md-12">
+                        <p style="text-align: center;">Cadastro Partidos</p>
                     </div>
                 </div>
             </div>

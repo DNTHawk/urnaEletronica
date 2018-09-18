@@ -648,3 +648,12 @@ hr {
     text-align: center;
     padding-left: 10px;
 }
+
+.return{
+    width: 60px;
+    position: absolute;
+    top: 20px;
+    cursor: pointer;
+    z-index: 3;
+   
+}

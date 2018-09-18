@@ -19,17 +19,25 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Cadastro Candidato</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
-        <form action="../system/proc_cad_candidato.php" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="idCandidato" value="">
-            <div class="row" style="margin-top:30px">
-                <div class="com-md-12">
-                    <h2>Cadastro de Candidato</h2>
-                </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="index.php">
+                    <img class="return" src="img/back-arrow.png" alt="">
+                </a>
             </div>
+        </div>
+        <div style="margin-top:40px" class="row">
+            <div class="col-md-12">
+                <h2 style="text-align:center;">Cadastro de Candidato</h2>
+            </div>
+        </div>
+        <form style="margin-top: 30px" action="../system/proc_cad_candidato.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="idCandidato" value="">
             <div class="row" style="margin-top:10px">
                 <div class="col-md-3">
                     <div class="form-group">
