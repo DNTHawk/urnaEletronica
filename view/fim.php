@@ -10,7 +10,6 @@ try {
     echo "Erro na conexão:" . $erro->getMessage();
 }
 
-$op = $_POST['op'];
 $depultadoEstadual = $_POST['depultadoEstadual'];
 $depultadoFederal = $_POST['depultadoFederal'];
 $senador = $_POST['senador'];
@@ -19,7 +18,7 @@ $presidente = $_POST['presidente'];
 
 if ($depultadoEstadual != "") {
 
-    $sql = "SELECT * FROM votos WHERE numero = '$depultadoEstadual'";
+    $sql = "SELECT * FROM votos WHERE numero = '$depultadoEstadual' AND tipoCandidato = '1'";
     $stmt = $conexao->prepare($sql);
 
     $stmt->execute();
@@ -27,7 +26,7 @@ if ($depultadoEstadual != "") {
     $rs = $stmt->fetch(PDO::FETCH_OBJ);
     
     if ($rs) {
-        $sql = "SELECT * FROM candidato WHERE numero = '$depultadoEstadual'";
+        $sql = "SELECT * FROM candidato WHERE numero = '$depultadoEstadual' AND tipoCandidato = '1'";
         $stmt = $conexao->prepare($sql);
 
         if ($stmt->execute()) {
@@ -66,7 +65,7 @@ if ($depultadoEstadual != "") {
 }
 if ($depultadoFederal != "") {
 
-    $sql = "SELECT * FROM votos WHERE numero = '$depultadoFederal'";
+    $sql = "SELECT * FROM votos WHERE numero = '$depultadoFederal' AND tipoCandidato = '2'";
     $stmt = $conexao->prepare($sql);
 
     $stmt->execute();
@@ -74,7 +73,7 @@ if ($depultadoFederal != "") {
     $rs = $stmt->fetch(PDO::FETCH_OBJ);
 
     if ($rs) {
-        $sql = "SELECT * FROM candidato WHERE numero = '$depultadoFederal'";
+        $sql = "SELECT * FROM candidato WHERE numero = '$depultadoFederal' AND tipoCandidato = '2'";
         $stmt = $conexao->prepare($sql);
 
         if ($stmt->execute()) {
@@ -90,7 +89,7 @@ if ($depultadoFederal != "") {
             }
         }
     } else {
-        $sql = "SELECT * FROM candidato WHERE numero = '$depultadoFederal'";
+        $sql = "SELECT * FROM candidato WHERE numero = '$depultadoFederal' AND tipoCandidato = '2'";
         $stmt = $conexao->prepare($sql);
 
         if ($stmt->execute()) {
@@ -111,7 +110,7 @@ if ($depultadoFederal != "") {
 }
 if ($senador != "") {
 
-    $sql = "SELECT * FROM votos WHERE numero = '$senador'";
+    $sql = "SELECT * FROM votos WHERE numero = '$senador' AND tipoCandidato = '3'";
     $stmt = $conexao->prepare($sql);
 
     $stmt->execute();
@@ -119,7 +118,7 @@ if ($senador != "") {
     $rs = $stmt->fetch(PDO::FETCH_OBJ);
 
     if ($rs) {
-        $sql = "SELECT * FROM candidato WHERE numero = '$senador'";
+        $sql = "SELECT * FROM candidato WHERE numero = '$senador' AND tipoCandidato = '3'";
         $stmt = $conexao->prepare($sql);
 
         if ($stmt->execute()) {
@@ -135,7 +134,7 @@ if ($senador != "") {
             }
         }
     } else {
-        $sql = "SELECT * FROM candidato WHERE numero = '$senador'";
+        $sql = "SELECT * FROM candidato WHERE numero = '$senador' AND tipoCandidato = '3'";
         $stmt = $conexao->prepare($sql);
 
         if ($stmt->execute()) {
@@ -219,9 +218,9 @@ if ($presidente != "") {
                     $stmt = $conexao->prepare("UPDATE votos SET qtdVotos = qtdVotos + 1 WHERE idCandidatoVoto='$idCandidato'");
                     $stmt->execute();
 
-                    sleep(10);
+                    sleep(5);
 
-                    echo "<script language='javascript' type='text/javascript'>window.location.href='index.php';</script>";
+                    echo "<script language='javascript' type='text/javascript'>window.location.href='urna.php';</script>";
                     break;
                 }
             }
@@ -241,9 +240,9 @@ if ($presidente != "") {
 
                     $stmt->execute();
 
-                    sleep(10);
+                    sleep(5);
 
-                    echo "<script language='javascript' type='text/javascript'>window.location.href='index.php';</script>";
+                    echo "<script language='javascript' type='text/javascript'>window.location.href='urna.php';</script>";
                     break;
                 }
             }
