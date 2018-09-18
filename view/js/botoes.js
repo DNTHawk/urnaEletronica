@@ -294,33 +294,33 @@ const pressionaBotao = (id) => {
 const confirma = () => {
   if (listaNumeros.length === 5 && permiteAvanco) {
     candidato = 'Deputado Federal'
+    audio.play()
     manipulaTelas()
     limpaCampos()
-    audio.play()
   }
   if (listaNumeros.length === 4 && candidato === 'Deputado Federal' && permiteAvanco) {
     candidato = 'Senador'
+    audio.play()
     manipulaTelas()
     limpaCampos()
-    audio.play()
   }
   if (listaNumeros.length === 3 && candidato === 'Senador' && permiteAvanco) {
     candidato = 'Governador'
+    audio.play()
     manipulaTelas()
     limpaCampos()
-    audio.play()
   }
   if (listaNumeros.length === 2 && candidato === 'Governador' && permiteAvanco) {
     candidato = 'Presidente'
+    audio.play()
     manipulaTelas()
     limpaCampos()
-    audio.play()
   }
   if (listaNumeros.length === 2 && candidato === 'Presidente' && permiteAvanco) {
     candidato = ''
+    audio.play()
     manipulaTelas()
     limpaCampos()
-    audio.play()
   }
 }
 
@@ -373,7 +373,7 @@ const branco = () => {
       document.getElementById('pre').value = 'BRANCO'
       break
   }
+  audio.play()
   manipulaTelas()
   limpaCampos()
-  audio.play()
 }

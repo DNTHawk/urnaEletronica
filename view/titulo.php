@@ -20,7 +20,6 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
 </head>
 <body>
     <div class="container">
@@ -32,9 +31,6 @@ try {
         <input id="sessao" type="text" value="0087">
         <input id="municipio" type="text" value="Sarandi/PR">
         <input id="dataEmissao" type="text" value="18/05/2014">
-        
     </div>
-    
-    <script src="js/resultados.js"></script>
 </body>
 </html>

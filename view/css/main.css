@@ -166,52 +166,42 @@ html, body{
     top: 170px;
     left: 820px;  
 }
-
 .urna .telaBotoes .btn.btn2 {
     top: 170px;
     left: 910px;  
 }
-
 .urna .telaBotoes .btn.btn3 {
     top: 170px;
     left: 1000px;  
 }
-
 .urna .telaBotoes .btn.btn4 {
     top: 250px;
     left: 812px;  
 }
-
 .urna .telaBotoes .btn.btn5 {
     top: 250px;
     left: 902px;  
 }
-
 .urna .telaBotoes .btn.btn6 {
     top: 250px;
     left: 992px;  
 }
-
 .urna .telaBotoes .btn.btn7 {
     top: 330px;
     left: 805px;  
 }
-
 .urna .telaBotoes .btn.btn8 {
     top: 330px;
     left: 895px;  
 }
-
 .urna .telaBotoes .btn.btn9 {
     top: 330px;
     left: 985px;  
 }
-
 .urna .telaBotoes .btn.btn0 {
     top: 410px;
     left: 887px;  
 }
-
 .urna .telaBotoes .btnBranco{
     z-index: 4;
     background-color: #FFF;
@@ -233,7 +223,6 @@ html, body{
     top: 506px;
     height: 64px;
 }
-
 .urna .telaBotoes .btnCorrige{
     z-index: 4;
     background-color: #FFA500;
@@ -323,7 +312,6 @@ h2{
     margin-left: 10px;
     margin-top: -15px;
 }
-
 #num2{
     background-color: #FFF;
     float: left;
@@ -360,19 +348,18 @@ h2{
     margin-left: 3px;
     margin-top: -15px;
 }
+
 #num1 p{
     font-size: 40px;
     margin-top: -2px;
     margin-left: 5px;
 }
-
 #num2 p{
     font-size: 40px;
     margin-top: -2px;
     margin-left: 5px;
 
 }
-
 #num3 p{
     font-size: 40px;
     margin-top: -2px;
@@ -388,6 +375,7 @@ h2{
     margin-top: -2px;
     margin-left: 5px;
 }
+
 .nome{
     float: left;
     font-size: 25px;
@@ -440,7 +428,6 @@ h2{
     -webkit-clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
     clip-path: polygon(8% 0%, 100% 0%, 91% 100%, 0% 100%);
 }
-
 #foto2 {
     position: absolute;
     top: 220px;
@@ -550,6 +537,7 @@ hr {
     margin-top: 0px;
     margin-left: 15px;
 }
+
 .hidden{
   display: none;  
 }
@@ -580,7 +568,6 @@ hr {
     height: 79px;
     border: none;
     background-color: #EDEED0;
-
     font-size: 40px;
     padding-left: 10px;
 }
@@ -593,7 +580,6 @@ hr {
     height: 46px;
     border: none;
     background-color: #EDEED0;
-
     font-size: 30px;
     text-align: center;
 }
@@ -606,11 +592,11 @@ hr {
     width: 353px;
     border: none;
     background-color: #EDEED0;
-
     font-size: 30px;
     text-align: right;
     padding-right: 10px;
 }
+
 #zona {
     position: absolute;
     left: 869px;
@@ -636,6 +622,7 @@ hr {
     text-align: center;
     padding-right: 10px;
 }
+
 #municipio {
     position: absolute;
     left: 237px;
