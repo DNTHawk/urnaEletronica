@@ -1,6 +1,12 @@
 <?php 
+session_start();
 
 include("../system/conexao.php");
+
+require '../system/verifica_sessao.php';
+
+// var_dump(isLoggedIn());
+// exit;
 
 try {
   $conexao = db_connect();

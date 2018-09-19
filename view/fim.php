@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 include("../system/conexao.php");
 
@@ -220,6 +221,7 @@ if ($presidente != "") {
 
                     sleep(5);
 
+                    $_SESSION['logged_in'] = false;
                     echo "<script language='javascript' type='text/javascript'>window.location.href='urna.php';</script>";
                     break;
                 }
@@ -242,6 +244,7 @@ if ($presidente != "") {
 
                     sleep(5);
 
+                    $_SESSION['logged_in'] = false;
                     echo "<script language='javascript' type='text/javascript'>window.location.href='urna.php';</script>";
                     break;
                 }
