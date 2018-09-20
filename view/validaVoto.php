@@ -22,16 +22,17 @@ try {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   
 </head>
-<body style="background-color:#87CEEB">
+<body>
+    <div class="bg"></div>
     <div class="container">
-        <form action="../system/valida.php" method="POST">
-            <div class="row" style="margin-top:300px;">
-                <div class="col-md-2 offset-md-5">
+        <form id="form" action="../system/valida.php" method="POST">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
                     <input class="form-control" name="codigo" type="text" require placeholder="Digite seu Codigo">
                 </div>
             </div>
             <div class="row" style="margin-top:20px;">
-                <div class="col-md-2 offset-md-5">
+                <div class="col-md-6 offset-md-3">
                     <input class="btn btn-success btn-block" type="submit" value="Entrar">
                 </div>
             </div>

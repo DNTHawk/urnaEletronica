@@ -5,8 +5,7 @@ include("../system/conexao.php");
 
 require '../system/verifica_sessao.php';
 
-// var_dump(isLoggedIn());
-// exit;
+// GIT
 
 try {
   $conexao = db_connect();

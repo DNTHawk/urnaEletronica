@@ -24,13 +24,13 @@ try {
 <body>
     <div class="container">
         <img id="imgTitulo" src="img/título-eleitor.jpg" alt="">
-        <input id="nomeEleitor" type="text" value="Felipe Rodrigo da Silva">
-        <input id="dataNasc" type="text" value="19/10/1996">
-        <input id="numInscricao" type="text" value="688033403/61">
-        <input id="zona" type="text" value="114">
-        <input id="sessao" type="text" value="0087">
-        <input id="municipio" type="text" value="Sarandi/PR">
-        <input id="dataEmissao" type="text" value="18/05/2014">
+        <input id="nomeEleitor" type="text" value="Felipe Rodrigo da Silva" disabled>
+        <input id="dataNasc" type="text" value="19/10/1996" disabled>
+        <input id="numInscricao" type="text" value="688033403/61" disabled>
+        <input id="zona" type="text" value="114" disabled>
+        <input id="sessao" type="text" value="0087" disabled>
+        <input id="municipio" type="text" value="Sarandi/PR" disabled>
+        <input id="dataEmissao" type="text" value="18/05/2014" disabled>
     </div>
 </body>
 </html>
