@@ -10,6 +10,19 @@ try {
     echo "Erro na conexão:" . $erro->getMessage();
 }
 
+
+$sql = "SELECT * FROM candidato, partido, votos WHERE candidato.partido = partido.idPartido AND votos.idCandidatoVoto = candidato.idCandidato";
+$query = $conexao->query($sql);
+
+$return = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$returnConvertidoJSON = json_encode($return);
+
+var_dump($returnConvertidoJSON);
+exit;
+
+echo "<script>let listaVotos = " . $returnConvertidoJSON . "</script>";
+
 ?>
 <!DOCTYPE html>
 <html>
