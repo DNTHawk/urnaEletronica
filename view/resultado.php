@@ -2,6 +2,8 @@
 
 include("../system/conexao.php");
 
+echo "<script src='./js/generateChart.js'></script>";
+
 try {
     $conexao = db_connect();
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -18,10 +20,8 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $returnConvertidoJSON = json_encode($return);
 
-var_dump($returnConvertidoJSON);
-exit;
-
-echo "<script>let listaVotos = " . $returnConvertidoJSON . "</script>";
+echo "<script>let listaVotos = " . $returnConvertidoJSON . "
+recebeLista(listaVotos)</script>";
 
 ?>
 <!DOCTYPE html>
