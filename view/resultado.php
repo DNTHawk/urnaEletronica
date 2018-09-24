@@ -18,9 +18,6 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $returnConvertidoJSON = json_encode($return);
 
-var_dump($returnConvertidoJSON);
-exit;
-
 echo "<script>let listaVotos = " . $returnConvertidoJSON . "</script>";
 
 ?>
