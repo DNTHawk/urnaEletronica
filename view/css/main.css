@@ -681,3 +681,8 @@ html, body{
     margin-left: 30%;
     height: 250px;
 }
+
+#botao-grafico {
+    position: relative;
+    bottom: 0px;
+}
