@@ -83,6 +83,7 @@ function validaTurno(){
                 <p>Quantidade Total de Votos <?php echo($valorSoma) ?></p>
             </div>
         </div>
+        
     </div>
 </body>
 </html>
