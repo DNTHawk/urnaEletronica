@@ -27,12 +27,11 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   
-  <style type="text/css" media="screen">
-  #botao-grafico {
-    position: fixed;
-    bottom: 30px;
-    right: 30px
-  }    
+  <style type="text/css" media="screen">   
+  .botao-grafico button{
+    position: absolute;
+    right: 85px;
+  }
 </style>
 
 </head>
@@ -69,7 +68,7 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
 
-    <div id="div_depultado_estadual">
+    <div style="margin-bottom:30px" id="div_depultado_estadual">
       <div class="row" style="margin-top:40px">
         <div class="col-md-12">
           <h3>Depultado Estadual</h3>
@@ -111,9 +110,16 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
           </table>
         </div>
       </div>
+      <div class="botao-grafico">
+        <a href="./chartDepultadoEstadual.php">
+          <button type="" class="btn btn-primary">
+            Visualizar em modo gráfico
+          </button>
+        </a>
+      </div>
     </div>
 
-    <div id="div_depultado_federal">
+    <div style="margin-bottom:30px" id="div_depultado_federal">
       <div class="row" style="margin-top:40px">
         <div class="col-md-12">
           <h3>Depultado Federal</h3>
@@ -155,6 +161,13 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
           </table>
         </div>
+      </div>
+      <div class="botao-grafico">
+        <a href="./chartDepultadoFederal.php">
+          <button type="" class="btn btn-primary">
+            Visualizar em modo gráfico
+          </button>
+        </a>
       </div>
     </div>
 
@@ -200,6 +213,13 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
           </table>
         </div>
+      </div>
+      <div class="botao-grafico">
+        <a href="./chartSenador.php">
+          <button type="" class="btn btn-primary">
+            Visualizar em modo gráfico
+          </button>
+        </a>
       </div>
     </div>
 
@@ -248,6 +268,13 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
           </table>
         </div>
       </div>
+      <div class="botao-grafico">
+        <a href="./chartGovernador.php">
+          <button type="" class="btn btn-primary">
+            Visualizar em modo gráfico
+          </button>
+        </a>
+      </div>
     </div>
 
     <div id="div_presidente">
@@ -295,14 +322,14 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
           </table>
         </div>
       </div>
+      <div class="botao-grafico">
+        <a href="./chartPresidente.php">
+          <button type="" class="btn btn-primary">
+            Visualizar em modo gráfico
+          </button>
+        </a>
+      </div>
     </div>
-  </div>
-  <div id="botao-grafico">
-    <a href="./chart.php">
-      <button type="" class="btn btn-primary">
-        Visualizar em modo gráfico
-      </button>
-    </a>
   </div>
   <script src="js/resultados.js"></script>
 </body>
