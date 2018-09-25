@@ -3,15 +3,15 @@ include("../system/conexao.php");
 
 echo "<script src='./js/generateChart.js'></script>";
 
-  try {
-    $conexao = db_connect();
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conexao->exec("set names utf8");
-  } catch (PDOException $erro) {
-    echo "Erro na conexão:" . $erro->getMessage();
-  }
-  
-  include("./consultaVotos.php");
+try {
+  $conexao = db_connect();
+  $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conexao->exec("set names utf8");
+} catch (PDOException $erro) {
+  echo "Erro na conexão:" . $erro->getMessage();
+}
+
+include("./consultaVotos.php");
 
 echo "<script>let listaVotos = " . $returnConvertidoJSON . "
   recebeLista(listaVotos)</script>";
@@ -44,29 +44,35 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
     </div>
     <div class="row">
       <div class="col-md-12">
-        <h1 style="text-align: center;">Presidente</h1>
+        <h1 style="text-align: center;">Depultado Estadual</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <canvas id="myChartPresidente" width="400" height="180"></canvas>
+        <canvas id="myChartDepultadoEstadual" width="400" height="180"></canvas>
         <script>
-          let nomeCandidatosPresidente = []
-          let qtdVotosPresidente = []
-          for (let i in listaVotosPresidentes) {
-            nomeCandidatosPresidente.push(listaVotosPresidentes[i].nomeCandidato)
-            qtdVotosPresidente.push(listaVotosPresidentes[i].qtdVotos)
+          let nomeCandidatosDepultadoEstadual = []
+          let qtdVotosDepultadoEstadual = []
+          for (let i in listaVotosDeputadosEstaduais) {
+            nomeCandidatosDepultadoEstadual.push(listaVotosDeputadosEstaduais[i].nomeCandidato)
+            qtdVotosDepultadoEstadual.push(listaVotosDeputadosEstaduais[i].qtdVotosDepultadoEstadual)
           }
 
-          let ctx = document.getElementById("myChartPresidente");
-          let myChartPresidente = new Chart(ctx, {
+          let ctx = document.getElementById("myChartDepultadoEstadual");
+          let myChartDepultadoEstadual = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-              labels: nomeCandidatosPresidente,
+              labels: nomeCandidatosDepultadoEstadual,
               datasets: [{
                 label: '# of Votes',
-                data: qtdVotosPresidente,
+                data: qtdVotosDepultadoEstadual,
                 backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
@@ -75,6 +81,12 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
                   'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
                   'rgba(255,99,132,1)',
                   'rgba(54, 162, 235, 1)',
                   'rgba(255, 206, 86, 1)',
@@ -89,7 +101,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
               scales: {
                 yAxes: [{
                   ticks: {
-                    
+                    beginAtZero: true
                   }
                 }]
               }

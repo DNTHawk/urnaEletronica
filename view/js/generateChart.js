@@ -5,7 +5,6 @@ let listaVotosDeputadosFederais = []
 let listaVotosDeputadosEstaduais = []
 
 const recebeLista = (lista) => {
-  console.log(lista)
   lista.forEach(candidato => {
     switch (candidato.tipoCandidato) {
       case '5':
@@ -25,5 +24,4 @@ const recebeLista = (lista) => {
         break
     }
   })
-  console.log(listaVotosPresidentes)
 }

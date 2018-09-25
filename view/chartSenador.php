@@ -3,15 +3,15 @@ include("../system/conexao.php");
 
 echo "<script src='./js/generateChart.js'></script>";
 
-  try {
-    $conexao = db_connect();
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conexao->exec("set names utf8");
-  } catch (PDOException $erro) {
-    echo "Erro na conexão:" . $erro->getMessage();
-  }
-  
-  include("./consultaVotos.php");
+try {
+  $conexao = db_connect();
+  $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conexao->exec("set names utf8");
+} catch (PDOException $erro) {
+  echo "Erro na conexão:" . $erro->getMessage();
+}
+
+include("./consultaVotos.php");
 
 echo "<script>let listaVotos = " . $returnConvertidoJSON . "
   recebeLista(listaVotos)</script>";
@@ -25,44 +25,54 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 </head>
 
 <body>
-  <div class="container">
+  
     <hr>
     <div class="row">
       <div class="col-md-12">
-        <h1 style="text-align: center;">Presidente</h1>
+        <a href="resultado.php">
+          <img style="top: 0; left: 50px" class="return" src="img/back-arrow.png" alt="">
+        </a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <canvas id="myChartPresidente" width="400" height="180"></canvas>
+        <h1 style="text-align: center;">Senador</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="myChartSenador" width="400" height="180"></canvas>
         <script>
-          let nomeCandidatosPresidente = []
-          let qtdVotosPresidente = []
-          for (let i in listaVotosPresidentes) {
-            nomeCandidatosPresidente.push(listaVotosPresidentes[i].nomeCandidato)
-            qtdVotosPresidente.push(listaVotosPresidentes[i].qtdVotosPresidente)
+          let nomeCandidatosSenador = []
+          let qtdVotosSenador = []
+          for (let i in listaVotosSenadores) {
+            nomeCandidatosSenador.push(listaVotosSenadores[i].nomeCandidato)
+            qtdVotosSenador.push(listaVotosSenadores[i].qtdVotosSenador)
           }
 
-          let ctx = document.getElementById("myChartPresidente");
-          let myChartPresidente = new Chart(ctx, {
+          let ctx = document.getElementById("myChartSenador");
+          let myChartSenador = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-              labels: nomeCandidatosPresidente,
+              labels: nomeCandidatosSenador,
               datasets: [{
                 label: '# of Votes',
-                data: qtdVotosPresidente,
+                data: qtdVotosSenador,
                 backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
                   'rgba(75, 192, 192, 0.2)',
                   'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
                   'rgba(255,99,132,1)',
@@ -70,6 +80,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
                   'rgba(255, 206, 86, 1)',
                   'rgba(75, 192, 192, 1)',
                   'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 1
               }]
@@ -87,7 +98,6 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
         </script>
       </div>
     </div>
-  </div>
 </body>
 
 </html>
