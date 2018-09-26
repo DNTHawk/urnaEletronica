@@ -33,8 +33,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
 </head>
 
 <body>
-  
-    <hr>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <a href="resultado.php">
@@ -48,14 +47,14 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-10 offset-1">
         <canvas id="myChartDepultadoFederal" width="400" height="180"></canvas>
         <script>
           let nomeCandidatosDepultadoFederal = []
           let qtdVotosDepultadoFederal = []
           for (let i in listaVotosDeputadosFederais) {
             nomeCandidatosDepultadoFederal.push(listaVotosDeputadosFederais[i].nomeCandidato)
-            qtdVotosDepultadoFederal.push(listaVotosDeputadosFederais[i].qtdVotosDepultadoFederal)
+            qtdVotosDepultadoFederal.push(listaVotosDeputadosFederais[i].qtdVotos)
           }
 
           let ctx = document.getElementById("myChartDepultadoFederal");
@@ -73,12 +72,11 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
                   'rgba(75, 192, 192, 0.2)',
                   'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 159, 64, 0.2)',
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
+                  'rgba(0, 100, 0, 0.2)',
+                  'rgba(139, 69, 19, 0.2)',
+                  'rgba(0, 128, 128, 0.2)',
+                  'rgba(112, 128, 144, 0.2)',
+                  'rgba(25, 25, 112, 0.2)'
                 ],
                 borderColor: [
                   'rgba(255,99,132,1)',
@@ -87,12 +85,11 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
                   'rgba(75, 192, 192, 1)',
                   'rgba(153, 102, 255, 1)',
                   'rgba(255, 159, 64, 1)',
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
+                  'rgba(0, 100, 0, 1)',
+                  'rgba(139, 69, 19, 1)',
+                  'rgba(0, 128, 128, 1)',
+                  'rgba(112, 128, 144, 1)',
+                  'rgba(25, 25, 112, 1)'
                 ],
                 borderWidth: 1
               }]
@@ -110,6 +107,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
         </script>
       </div>
     </div>
+  </div>
 </body>
 
 </html>

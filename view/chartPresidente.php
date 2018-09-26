@@ -33,69 +33,70 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
 </head>
 
 <body>
-  
-    <hr>
-    <div class="row">
-      <div class="col-md-12">
-        <a href="resultado.php">
-          <img style="top: 0; left: 50px" class="return" src="img/back-arrow.png" alt="">
-        </a>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="resultado.php">
+            <img style="top: 0; left: 50px" class="return" src="img/back-arrow.png" alt="">
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h1 style="text-align: center;">Presidente</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="text-align: center;">Presidente</h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <canvas id="myChartPresidente" width="400" height="180"></canvas>
-        <script>
-          let nomeCandidatosPresidente = []
-          let qtdVotosPresidente = []
-          for (let i in listaVotosPresidentes) {
-            nomeCandidatosPresidente.push(listaVotosPresidentes[i].nomeCandidato)
-            qtdVotosPresidente.push(listaVotosPresidentes[i].qtdVotos)
-          }
-
-          let ctx = document.getElementById("myChartPresidente");
-          let myChartPresidente = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-              labels: nomeCandidatosPresidente,
-              datasets: [{
-                label: '# of Votes',
-                data: qtdVotosPresidente,
-                backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-              }]
-            },
-            options: {
-              scales: {
-                yAxes: [{
-                  ticks: {
-                    
-                  }
-                }]
-              }
+      <div class="row">
+        <div class="col-md-10 offset-1">
+          <canvas id="myChartPresidente" width="400" height="180"></canvas>
+          <script>
+            let nomeCandidatosPresidente = []
+            let qtdVotosPresidente = []
+            for (let i in listaVotosPresidentes) {
+              nomeCandidatosPresidente.push(listaVotosPresidentes[i].nomeCandidato)
+              qtdVotosPresidente.push(listaVotosPresidentes[i].qtdVotos)
             }
-          });
-        </script>
+            let ctx = document.getElementById("myChartPresidente");
+            let myChartPresidente = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                labels: nomeCandidatosPresidente,
+                datasets: [{
+                  label: '# of Votes',
+                  data: qtdVotosPresidente,
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      max: 5,
+                      min: 0,
+                      stepSize: 1
+                    }
+                  }]
+                }
+              }
+            });
+          </script>
+        </div>
       </div>
     </div>
 </body>
