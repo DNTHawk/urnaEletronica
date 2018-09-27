@@ -334,7 +334,6 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $idCandidato != "") 
         </form>
         <?php 
         include("listar_deputadoEstadual.php");
-        
         ?>
     </div>
 
