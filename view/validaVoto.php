@@ -20,13 +20,18 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
+  <script src="js/validaCPF.js"></script>
 </head>
 <body>
     <div class="bg"></div>
     <div class="container">
         <form id="form" action="../system/valida.php" method="POST">
             <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <input type="text" name="cpf" class="form-control" onkeydown="javascript: fMasc( this, mCPF );" maxlength="14" placeholder="Digite seu CPF" required>
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px">
                 <div class="col-md-6 offset-md-3">
                     <input class="form-control" name="codigo" type="text" require placeholder="Digite seu Codigo">
                 </div>

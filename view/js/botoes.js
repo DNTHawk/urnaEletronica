@@ -376,6 +376,7 @@ const branco = () => {
       break
     case 'Presidente':
       document.getElementById('pre').value = 'BRANCO'
+      candidato = ''
       break
   }
   audio.play()

@@ -117,60 +117,10 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $cpf != "") {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script type="text/javascript">
-      function fMasc(objeto,mascara) {
-        obj=objeto
-        masc=mascara
-        setTimeout("fMascEx()",1)
-      }
-      function fMascEx() {
-        obj.value=masc(obj.value)
-      }
-      function mTel(tel) {
-        tel=tel.replace(/\D/g,"")
-        tel=tel.replace(/^(\d)/,"($1")
-        tel=tel.replace(/(.{3})(\d)/,"$1)$2")
-        if(tel.length == 9) {
-          tel=tel.replace(/(.{1})$/,"-$1")
-        } else if (tel.length == 10) {
-          tel=tel.replace(/(.{2})$/,"-$1")
-        } else if (tel.length == 11) {
-          tel=tel.replace(/(.{3})$/,"-$1")
-        } else if (tel.length == 12) {
-          tel=tel.replace(/(.{4})$/,"-$1")
-        } else if (tel.length > 12) {
-          tel=tel.replace(/(.{4})$/,"-$1")
-        }
-        return tel;
-      }
-      function mCNPJ(cnpj){
-        cnpj=cnpj.replace(/\D/g,"")
-        cnpj=cnpj.replace(/^(\d{2})(\d)/,"$1.$2")
-        cnpj=cnpj.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")
-        cnpj=cnpj.replace(/\.(\d{3})(\d)/,".$1/$2")
-        cnpj=cnpj.replace(/(\d{4})(\d)/,"$1-$2")
-        return cnpj
-      }
-      function mCPF(cpf){
-        cpf=cpf.replace(/\D/g,"")
-        cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-        cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-        cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
-        return cpf
-      }
-      function mCEP(cep){
-        cep=cep.replace(/\D/g,"")
-        cep=cep.replace(/^(\d{2})(\d)/,"$1.$2")
-        cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
-        return cep
-      }
-      function mNum(num){
-        num=num.replace(/\D/g,"")
-        return num
-      }
-    </script>
+    <script src="js/validaCPF.js"></script>
 </head>
 <body>
+    <div class="bg"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-3">
@@ -192,7 +142,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $cpf != "") {
                         </div>
                         <div class="row">
                             <div class="col-md-4 offset-4">
-                                <input type="submit" class="btn btn-success btn-block">
+                                <input type="submit" class="btn btn-success btn-block" onclick="VerificaCPF();">
                             </div>
                         </div>
                     </form>

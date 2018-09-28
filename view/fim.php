@@ -25,7 +25,7 @@ if ($depultadoEstadual != "") {
     $stmt->execute();
 
     $rs = $stmt->fetch(PDO::FETCH_OBJ);
-    
+
     if ($rs) {
         $sql = "SELECT * FROM candidato WHERE numero = '$depultadoEstadual' AND tipoCandidato = '1'";
         $stmt = $conexao->prepare($sql);
@@ -42,20 +42,19 @@ if ($depultadoEstadual != "") {
                 }
             }
         }
-    }
-    else{
+    } else {
         $sql = "SELECT * FROM candidato WHERE numero = '$depultadoEstadual'";
         $stmt = $conexao->prepare($sql);
-    
+
         if ($stmt->execute()) {
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $idCandidato = $rs->idCandidato;
                 $tipoCandidato = $rs->tipoCandidato;
-    
+
                 if ($idCandidato != "") {
                     $stmt = $conexao->prepare("INSERT INTO votos (idCandidatoVoto, numero, tipoCandidato, qtdVotos) 
                     VALUES ('$idCandidato', '$depultadoEstadual', '$tipoCandidato', '1')");
-    
+
                     $stmt->execute();
 
                     break;
@@ -222,7 +221,7 @@ if ($presidente != "") {
                     sleep(5);
 
                     $_SESSION['logged_in'] = false;
-                    echo "<script language='javascript' type='text/javascript'>window.location.href='urna.php';</script>";
+                    echo "<script language='javascript' type='text/javascript'>window.location.href='gerarCodigo.php';</script>";
                     break;
                 }
             }
@@ -245,7 +244,7 @@ if ($presidente != "") {
                     sleep(5);
 
                     $_SESSION['logged_in'] = false;
-                    echo "<script language='javascript' type='text/javascript'>window.location.href='urna.php';</script>";
+                    echo "<script language='javascript' type='text/javascript'>window.location.href='gerarCodigo.php';</script>";
                     break;
                 }
             }

@@ -80,6 +80,20 @@ try {
                     </div>
                 </div>
             </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="gerarCodigo.php">
+                            <img style="width:60%; margin-left:20%" src="img/binary-code.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div class="col-md-12">
+                        <p style="text-align: center;">Codigo Voto</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
