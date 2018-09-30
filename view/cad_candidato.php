@@ -136,7 +136,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $numero != "") {
 
     try {
         if ($idCandidato != "") {
-            $stmt = $conexao->prepare("UPDATE candidato  SET numero=?, nome=?, partido=?, nomeVice=?, fotoCandidato=?, fotoVice=?, tipoCandidato=?  WHERE idCandidato = ?");
+            $stmt = $conexao->prepare("UPDATE candidato  SET numero=?, nomeCandidato=?, partido=?, nomeVice=?, fotoCandidato=?, fotoVice=?, tipoCandidato=?  WHERE idCandidato = ?");
             $stmt->bindParam(8, $idCandidato);
         } else {
             $stmt = $conexao->prepare("INSERT INTO candidato (numero, nomeCandidato, partido, nomeVice, fotoCandidato, fotoVice, tipoCandidato) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -180,12 +180,13 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $idCandidato != "") 
             $rs = $stmt->fetch(PDO::FETCH_OBJ);
             $idCandidato = $rs->idCandidato;
             $numero = $rs->numero;
-            $nome = $rs->nome;
+            $nome = $rs->nomeCandidato;
             $partido = $rs->descricao;
             $nomeVice = $rs->nomeVice;
-            $tipoCandidato = $rs->nomeTipoCandidato;
+            $tipoCandidato = $rs->tipoCandidato;
             $idPartido = $rs->idPartido;
-            $idTipoCandidato = $rs->idTipoCandidato;
+						$idTipoCandidato = $rs->idTipoCandidato;
+						$descricao = $rs->descricao;
         } else {
             throw new PDOException("Erro: Não foi possível executar a declaração sql");
         }
@@ -242,8 +243,12 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $idCandidato != "") 
         <h2 style="text-align:center;">Cadastro de Candidato</h2>
       </div>
     </div>
-    <form style="margin-top: 30px" action="../system/proc_cad_candidato.php" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="idCandidato" value="">
+    <form style="margin-top: 30px" action="?act=save" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="idCandidato" <?php
+			if (isset($idCandidato) && $idCandidato != null || $idCandidato != "") {
+				echo "value=\"{$idCandidato}\"";
+			}
+			?> />
       <div class="row" style="margin-top:10px">
         <div class="col-md-3">
           <div class="form-group">
@@ -272,13 +277,21 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $idCandidato != "") 
         <div id="numero" class="col-md-3">
           <div class="form-group">
             <label for="numero">Numero Candidato:</label>
-            <input type="number" name="numero" class="form-control" require>
+						<input type="number" name="numero" require class="form-control" <?php
+						if (isset($numero) && $numero != null || $numero != "") {
+							echo "value=\"{$numero}\"";
+						}
+						?> />
           </div>
 				</div>
 				<div id="nome"class="col-md-3">
 						<div class="form-group">
 								<label for="nome">Nome Candidato:</label>
-								<input type="text" name="nome" class="form-control" require>
+								<input type="text" name="nome" require class="form-control" <?php
+								if (isset($nome) && $nome != null || $nome != "") {
+									echo "value=\"{$nome}\"";
+								}
+								?> />
 						</div>
 				</div>
 				<div class="col-md-3">
@@ -310,7 +323,11 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $idCandidato != "") 
 				<div id="nomeVice" class="col-md-3">
 					<div class="form-group">
 						<label for="nomeVice">Nome Vice:</label>
-						<input type="text" name="nomeVice" class="form-control" require>
+						<input type="text" name="nomeVice" require class="form-control" <?php
+						if (isset($nomeVice) && $nomeVice != null || $nomeVice != "") {
+							echo "value=\"{$nomeVice}\"";
+						}
+						?> />
 					</div>
 				</div>
 				<div id="fotoCandidato" class="col-md-4">
