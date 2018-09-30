@@ -52,6 +52,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
           <script>
             let nomeCandidatosPresidente = []
             let qtdVotosPresidente = []
+
             for (let i in listaVotosPresidentes) {
               nomeCandidatosPresidente.push(listaVotosPresidentes[i].nomeCandidato)
               qtdVotosPresidente.push(listaVotosPresidentes[i].qtdVotos)
@@ -62,7 +63,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
               data: {
                 labels: nomeCandidatosPresidente,
                 datasets: [{
-                  label: '# of Votes',
+                  label: '# de Votos',
                   data: qtdVotosPresidente,
                   backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -80,7 +81,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
                   ],
-                  borderWidth: 1
+                  borderWidth: 5
                 }]
               },
               options: {
@@ -92,6 +93,14 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
                       stepSize: 1
                     }
                   }]
+                },
+                layout: {
+                  padding: {
+                    left: 20,
+                    right: 20,
+                    top: 0,
+                    bottom: 0
+                  }
                 }
               }
             });
