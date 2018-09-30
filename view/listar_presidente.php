@@ -14,7 +14,11 @@
       <tbody>
         <?php
         try {
-            $stmt = $conexao->prepare("SELECT * FROM candidato, partido, tipoCandidato WHERE candidato.partido = partido.idPartido AND candidato.tipoCandidato = tipoCandidato.idTipoCandidato AND tipoCandidato.idTipoCandidato = '5'");
+            $stmt = $conexao->prepare("SELECT * FROM candidato, partido, tipoCandidato 
+            WHERE candidato.partido = partido.idPartido 
+            AND candidato.tipoCandidato = tipoCandidato.idTipoCandidato 
+            AND tipoCandidato.idTipoCandidato = '5'
+            AND candidato.numero <> 'BRANCO'");
             if ($stmt->execute()) {
                 while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr>";

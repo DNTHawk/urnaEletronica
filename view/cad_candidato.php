@@ -136,7 +136,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $numero != "") {
 
     try {
         if ($idCandidato != "") {
-            $stmt = $conexao->prepare("UPDATE candidato  SET numero=?, nomeCandidato=?, partido=?, nomeVice=?, fotoCandidato=?, fotoVice=?, tipoCandidato=?  WHERE idCandidato = ?");
+            $stmt = $conexao->prepare("UPDATE candidato  SET numero=?, nomeCandidatogit=?, partido=?, nomeVice=?, fotoCandidato=?, fotoVice=?, tipoCandidato=?  WHERE idCandidato = ?");
             $stmt->bindParam(8, $idCandidato);
         } else {
             $stmt = $conexao->prepare("INSERT INTO candidato (numero, nomeCandidato, partido, nomeVice, fotoCandidato, fotoVice, tipoCandidato) VALUES (?, ?, ?, ?, ?, ?, ?)");
