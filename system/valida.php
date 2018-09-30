@@ -31,7 +31,13 @@ if ($rs) {
     $rs = $stmt->fetch(PDO::FETCH_OBJ);
     if ($rs) {
         $_SESSION['logged_in'] = true;
+
+        $stmt = $conexao->prepare("UPDATE codigo SET voto = '1' WHERE cpf = '$cpf' AND codigo = '$codigo'");
+        $stmt->execute();
+
         echo "<script language='javascript' type='text/javascript'>window.location.href='../view/urna.php';</script>";
+
+        
     }else{
         $_SESSION['logged_in'] = false;
         echo "<script language='javascript' type='text/javascript'>alert('Eleitor já votou!');window.location.href='validaVoto.php';</script>";
