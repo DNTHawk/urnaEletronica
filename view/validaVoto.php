@@ -3,12 +3,14 @@
 include("../system/conexao.php");
 
 try {
-    $conexao = db_connect();
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conexao->exec("set names utf8");
+  $conexao = db_connect();
+  $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conexao->exec("set names utf8");
 } catch (PDOException $erro) {
-    echo "Erro na conexão:" . $erro->getMessage();
+  echo "Erro na conexão:" . $erro->getMessage();
 }
+session_start();
+$codigo = $_SESSION['codigo'];
 
 ?>
 <!DOCTYPE html>
@@ -23,25 +25,29 @@ try {
   <script src="js/validaCPF.js"></script>
 </head>
 <body>
-    <div class="bg"></div>
-    <div class="container">
-        <form id="form" action="../system/valida.php" method="POST">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <input type="text" name="cpf" class="form-control" onkeydown="javascript: fMasc( this, mCPF );" maxlength="14" placeholder="Digite seu CPF" required>
-                </div>
-            </div>
-            <div class="row" style="margin-top:10px">
-                <div class="col-md-6 offset-md-3">
-                    <input class="form-control" name="codigo" type="text" require placeholder="Digite seu Codigo">
-                </div>
-            </div>
-            <div class="row" style="margin-top:20px;">
-                <div class="col-md-6 offset-md-3">
-                    <input class="btn btn-success btn-block" type="submit" value="Entrar">
-                </div>
-            </div>
-        </form>
-    </div>
+  <div class="bg"></div>
+  <div class="container">
+    <form id="form" action="../system/valida.php" method="POST">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <label>CPF:
+            <input type="text" name="cpf" class="form-control" onkeydown="javascript: fMasc( this, mCPF );" maxlength="14" placeholder="Digite seu CPF" required>
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <div class="col-md-6 offset-md-3">
+          <label style="color: #FFF">Código:
+            <input class='form-control' name='codigo' type='text' id='campoCodigo' require value="<?php echo $codigo ?>">
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-6 offset-md-3">
+          <input class="btn btn-success btn-block" type="submit" value="Entrar">
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
