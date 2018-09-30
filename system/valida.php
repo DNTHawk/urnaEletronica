@@ -40,10 +40,10 @@ if ($rs) {
         
     }else{
         $_SESSION['logged_in'] = false;
-        echo "<script language='javascript' type='text/javascript'>alert('Eleitor já votou!');window.location.href='validaVoto.php';</script>";
+        echo "<script language='javascript' type='text/javascript'>alert('Eleitor já votou!');window.location.href='../view/validaVoto.php';</script>";
     }
 }else{
     $_SESSION['logged_in'] = false;
-    echo "<script language='javascript' type='text/javascript'>alert('Codigo Incorreto!');window.location.href='validaVoto.php';</script>";
+    echo "<script language='javascript' type='text/javascript'>alert('Codigo Incorreto!');window.location.href='../view/validaVoto.php';</script>";
 }
 ?>
