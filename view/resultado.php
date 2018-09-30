@@ -88,7 +88,11 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
               <?php
               try {
-                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos WHERE candidato.partido = partido.idPartido AND votos.idCandidatoVoto = candidato.idCandidato AND votos.tipoCandidato = '1'");
+                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos 
+                WHERE candidato.partido = partido.idPartido 
+                AND votos.idCandidatoVoto = candidato.idCandidato 
+                AND votos.tipoCandidato = '1' 
+                ORDER BY votos.qtdVotos DESC");
                 if ($stmt->execute()) {
                   while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr>";
@@ -139,8 +143,11 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
               <?php
               try {
-                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos WHERE candidato.partido = partido.idPartido 
-                  AND votos.idCandidatoVoto = candidato.idCandidato AND votos.tipoCandidato = '2'");
+                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos 
+                WHERE candidato.partido = partido.idPartido 
+                AND votos.idCandidatoVoto = candidato.idCandidato 
+                AND votos.tipoCandidato = '2' 
+                ORDER BY votos.qtdVotos DESC");
                 if ($stmt->execute()) {
                   while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr>";
@@ -191,8 +198,11 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
               <?php
               try {
-                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos WHERE candidato.partido = partido.idPartido 
-                  AND votos.idCandidatoVoto = candidato.idCandidato AND votos.tipoCandidato = '3'");
+                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos 
+                WHERE candidato.partido = partido.idPartido 
+                AND votos.idCandidatoVoto = candidato.idCandidato 
+                AND votos.tipoCandidato = '3'
+                ORDER BY votos.qtdVotos DESC");
                 if ($stmt->execute()) {
                   while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr>";
@@ -244,8 +254,11 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
               <?php
               try {
-                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos WHERE candidato.partido = partido.idPartido 
-                  AND votos.idCandidatoVoto = candidato.idCandidato AND votos.tipoCandidato = '4'");
+                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos 
+                WHERE candidato.partido = partido.idPartido 
+                AND votos.idCandidatoVoto = candidato.idCandidato 
+                AND votos.tipoCandidato = '4'
+                ORDER BY votos.qtdVotos DESC");
                 if ($stmt->execute()) {
                   while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr>";
@@ -298,8 +311,11 @@ $return = $query->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
               <?php
               try {
-                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos WHERE candidato.partido = partido.idPartido 
-                  AND votos.idCandidatoVoto = candidato.idCandidato AND votos.tipoCandidato = '5'");
+                $stmt = $conexao->prepare("SELECT * FROM candidato, partido, votos 
+                WHERE candidato.partido = partido.idPartido 
+                AND votos.idCandidatoVoto = candidato.idCandidato 
+                AND votos.tipoCandidato = '5'
+                ORDER BY votos.qtdVotos DESC");
                 if ($stmt->execute()) {
                   while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                     echo "<tr>";
