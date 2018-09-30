@@ -12,7 +12,6 @@ try {
 
 session_start();
 $codigo = $_SESSION['codigo'];
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +22,7 @@ $codigo = $_SESSION['codigo'];
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
   <div class="bg"></div>
@@ -38,19 +38,17 @@ $codigo = $_SESSION['codigo'];
           <div class="row">
             <div class="col-md-6 offset-3">
               <div class="box" style="height:60px; margin-top:0px; border-radius:0px">
-                <p><?php echo ($codigo); 
-                echo "<script>let codigo = ".$codigo."</script>";
-                ?></p>
+                <p><?php echo ($codigo);?></p>
               </div>
             </div>
           </div>  
           <div class="row">
             <div class="col-md-4 offset-4">
               <a href="validaVoto.php">
-                <button style="margin-top:50px" class="btn btn-success btn-block" onclick="alert(codigo)">Voltar</button>
+                <button style="margin-top:50px" class="btn btn-success btn-block">Voltar</button>
               </a>
             </div>
-          </div>     
+          </div>
         </div>
       </div>
     </div>
