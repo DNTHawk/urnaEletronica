@@ -63,7 +63,7 @@ echo "<script>let listaVotos = " . $returnConvertidoJSON . "
               data: {
                 labels: nomeCandidatosSenador,
                 datasets: [{
-                  label: '# of Votes',
+                  label: '# de Votos',
                   data: qtdVotosSenador,
                   backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
